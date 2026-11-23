@@ -66,7 +66,9 @@ if (-not $secretSet) {
 Write-Host "[saras] SARAS AI on http://${BindHost}:$Port  (API docs: /api/docs). Ctrl+C to stop." -ForegroundColor Cyan
 Push-Location $Backend
 try {
-    & $Python -m uvicorn app.main:app --host $BindHost --port $Port
+    # --proxy-headers: behind a local tunnel/proxy (cloudflared, Caddy on 127.0.0.1) the real
+    # client IP and https scheme come from X-Forwarded-* (only trusted from 127.0.0.1).
+    & $Python -m uvicorn app.main:app --host $BindHost --port $Port --proxy-headers --no-server-header
 } finally {
     Pop-Location
 }

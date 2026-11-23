@@ -25,6 +25,7 @@ from .config import Settings, get_settings, set_settings
 from .db import SessionLocal, create_schema, get_engine, init_engine
 from .errors import _DEFAULT_CODES, ApiError, install_error_handlers
 from .ratelimit import RateLimitMiddleware
+from .security_headers import SecurityHeadersMiddleware
 from .uploadguard import UploadGuardMiddleware
 
 API_PREFIX = "/api/v1"
@@ -189,6 +190,9 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         allow_headers=["Authorization", "Content-Type", "Idempotency-Key", "Accept"],
         expose_headers=["Content-Disposition", "Retry-After"],
     )
+    if s.security_headers:
+        # Outermost: every response, including errors, 429s and CORS preflights.
+        app.add_middleware(SecurityHeadersMiddleware, frontend_dist=Path(s.frontend_dist), hsts=s.env == "prod")
 
     from .api import auth, exams, submissions  # imported here so `import app.main` stays light
 

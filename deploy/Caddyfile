@@ -1,0 +1,20 @@
+# SARAS AI behind Caddy: automatic HTTPS (Let's Encrypt) in front of the app container.
+# Used by deploy/docker-compose.https.yml. Set SARAS_DOMAIN to a DNS name that points at
+# this server (ports 80 and 443 open); Caddy obtains and renews the certificate itself.
+
+{$SARAS_DOMAIN} {
+	encode zstd gzip
+
+	# Answer sheets are up to 20 MB (SARAS_MAX_UPLOAD_MB); allow a little multipart overhead.
+	request_body {
+		max_size 25MB
+	}
+
+	reverse_proxy app:8000 {
+		# Sheet processing is asynchronous, but exports and uploads can take a while.
+		transport http {
+			read_timeout 120s
+			write_timeout 120s
+		}
+	}
+}

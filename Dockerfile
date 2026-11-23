@@ -29,7 +29,13 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     SARAS_DATABASE_URL=sqlite:////data/saras.db \
     SARAS_STORAGE_DIR=/data/storage \
     SARAS_FRONTEND_DIST=/app/frontend/dist \
-    HF_HOME=/data/hf-cache
+    HF_HOME=/data/hf-cache \
+    PORT=8000 \
+    FORWARDED_ALLOW_IPS=127.0.0.1
+# PORT: hosting platforms (Render, Railway, Azure App Service, ...) set their own.
+# FORWARDED_ALLOW_IPS: proxies whose X-Forwarded-For / -Proto are trusted (real client IP
+# for rate limiting, https for HSTS). Behind a platform proxy or Caddy set it to that
+# proxy's address, or "*" when the container is reachable ONLY through that proxy.
 
 WORKDIR /app/backend
 
@@ -54,8 +60,8 @@ EXPOSE 8000
 
 # Liveness only (no database); /ready also checks the database and the worker.
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
-    CMD ["python", "-c", "import urllib.request, sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=4).status == 200 else 1)"]
+    CMD ["python", "-c", "import os, sys, urllib.request; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:%s/health' % os.environ.get('PORT', '8000'), timeout=4).status == 200 else 1)"]
 
 # One uvicorn process: the job worker runs as a thread inside it (see docker-compose.yml
 # for how to add worker capacity).
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "exec uvicorn app.main:app --host 0.0.0.0 --port \"${PORT:-8000}\" --proxy-headers --no-server-header"]

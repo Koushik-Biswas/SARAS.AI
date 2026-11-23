@@ -68,6 +68,8 @@ class Settings(BaseSettings):
     # API
     cors_origins: list[str] = ["http://localhost:5173", "http://127.0.0.1:5173"]
     rate_limit_enabled: bool = True
+    # CSP, X-Frame-Options, nosniff, Referrer-Policy, HSTS on HTTPS in prod (app/security_headers.py).
+    security_headers: bool = True
     rate_limit_per_minute: int = 100
     upload_rate_per_minute: int = 10
     log_level: str = "INFO"

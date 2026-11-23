@@ -9,7 +9,11 @@
 
 import type { FieldErrorDetail, TokenOut, UploadProgress } from "./types";
 
-export const API_BASE = "/api/v1";
+// Same origin by default (FastAPI serves this SPA). For a split deployment (e.g. the SPA
+// on Vercel, the API elsewhere) build with VITE_API_ORIGIN=https://api.example.com and
+// add the SPA's origin to the backend's SARAS_CORS_ORIGINS.
+const API_ORIGIN = ((import.meta.env.VITE_API_ORIGIN as string | undefined) ?? "").trim().replace(/\/+$/, "");
+export const API_BASE = `${API_ORIGIN}/api/v1`;
 const REFRESH_KEY = "saras.refresh_token";
 
 // ---------------------------------------------------------------- errors

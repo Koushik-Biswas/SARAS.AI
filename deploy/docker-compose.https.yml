@@ -1,0 +1,36 @@
+# HTTPS overlay for docker-compose.yml: Caddy terminates TLS and is the only public entry.
+#
+#   export SARAS_DOMAIN=saras.example.edu      # DNS A/AAAA record -> this server
+#   docker compose -f docker-compose.yml -f deploy/docker-compose.https.yml up -d --build
+#
+# The app port is no longer published; the app trusts X-Forwarded-* only from the
+# private compose network (FORWARDED_ALLOW_IPS="*" is safe because only Caddy can reach it).
+
+services:
+  app:
+    ports: !reset []
+    environment:
+      FORWARDED_ALLOW_IPS: "*"
+      SARAS_CORS_ORIGINS: '["https://${SARAS_DOMAIN:?Set SARAS_DOMAIN}"]'
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      SARAS_DOMAIN: ${SARAS_DOMAIN:?Set SARAS_DOMAIN}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    cpus: 0.5
+    mem_limit: 128m
+
+volumes:
+  caddy_data:
+  caddy_config:

@@ -313,6 +313,8 @@ uploads, page images), `backend/samples/` (from `scripts.make_samples`),
 
 ## Documentation
 
+- [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md): **production deployment** (VM + Docker + HTTPS,
+  laptop + Cloudflare tunnel, Vercel frontend), required settings, backups, post-deploy checklist.
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): processing pipeline, confidence
   routing, data model, jobs and failure handling.
 - [docs/DEMO.md](docs/DEMO.md): viva demo script.

@@ -73,3 +73,19 @@ jobs:
         run: docker compose config --quiet
       - name: Build image
         run: docker build -t saras-ai:ci .
+      - name: Validate the HTTPS overlay
+        env:
+          SARAS_DOMAIN: saras.example.com
+        run: docker compose -f docker-compose.yml -f deploy/docker-compose.https.yml config --quiet
+      - name: Container smoke test (health, SPA, security headers)
+        run: |
+          docker run -d --name saras -p 8000:8000 \
+            -e SARAS_JWT_SECRET=ci-only-not-a-real-secret-0123456789abcdef saras-ai:ci
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8000/health && break; sleep 2; done
+          curl -fsS http://127.0.0.1:8000/ready
+          curl -fsSI http://127.0.0.1:8000/ | tee headers.txt
+          grep -qi "^content-security-policy:" headers.txt
+          grep -qi "^x-frame-options: DENY" headers.txt
+      - name: Container logs on failure
+        if: failure()
+        run: docker logs saras || true

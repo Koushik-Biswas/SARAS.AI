@@ -79,3 +79,9 @@ coverage/
 *~
 # Benchmark run outputs (rendered pages, copies of input sheets); report.json / results.jsonl stay
 backend/evaluation/reports/*/storage/
+
+# Backups contain student work
+backend/backups/
+backups/
+# Vercel CLI link folder
+.vercel/
