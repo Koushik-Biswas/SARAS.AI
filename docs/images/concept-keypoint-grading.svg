@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="470" viewBox="0 0 960 470" role="img" aria-label="Key-point rubric grading: sentence by key point entailment matrix, best support per key point, marks" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>Key-point rubric grading: sentence by key point entailment matrix, best support per key point, marks</title>
+<defs>
+<linearGradient id="gAccent" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d5ef5"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8f88d6"/></marker>
+</defs>
+<rect x="0.5" y="0.5" width="959" height="469" rx="14" fill="#fcfcff" stroke="#e4e1f7"/>
+<rect x="0.5" y="0.5" width="959" height="5" rx="2" fill="url(#gAccent)"/>
+<text x="28" y="40" font-size="18" font-weight="700" fill="#1b1f2a">Key-point rubric grading: explainable partial credit</text>
+<text x="28" y="62" font-size="12.5" fill="#4b5163">Q2 "Explain overfitting" (5 marks)  ·  lexical thresholds τ = 0.6, τ_low = 0.4, contradiction = 0.5  ·  illustrative scores</text>
+<text x="28" y="100" font-size="12.5" font-weight="650" fill="#1b1f2a" text-anchor="start">Entailment E (green) and contradiction C (red) for every sentence × key point</text>
+<text x="459.0" y="136" font-size="12.5" font-weight="700" fill="#1b1f2a" text-anchor="middle">KP1</text>
+<text x="459.0" y="152" font-size="11" font-weight="400" fill="#7a8094" text-anchor="middle">weight 2</text>
+<text x="577.0" y="136" font-size="12.5" font-weight="700" fill="#1b1f2a" text-anchor="middle">KP2</text>
+<text x="577.0" y="152" font-size="11" font-weight="400" fill="#7a8094" text-anchor="middle">weight 2</text>
+<text x="695.0" y="136" font-size="12.5" font-weight="700" fill="#1b1f2a" text-anchor="middle">KP3</text>
+<text x="695.0" y="152" font-size="11" font-weight="400" fill="#7a8094" text-anchor="middle">weight 1</text>
+<text x="28" y="194" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">S1  It memorises every training example, even the noise.</text>
+<rect x="404" y="168" width="110" height="42" rx="7" fill="rgba(22,163,74,0.71)" stroke="#ffffff" stroke-width="2"/>
+<text x="459.0" y="195" font-size="12.5" font-weight="650" fill="#ffffff" text-anchor="middle">E 0.82</text>
+<rect x="522" y="168" width="110" height="42" rx="7" fill="rgba(22,163,74,0.19)" stroke="#ffffff" stroke-width="2"/>
+<text x="577.0" y="195" font-size="12.5" font-weight="650" fill="#1b1f2a" text-anchor="middle">E 0.12</text>
+<rect x="640" y="168" width="110" height="42" rx="7" fill="rgba(22,163,74,0.14)" stroke="#ffffff" stroke-width="2"/>
+<text x="695.0" y="195" font-size="12.5" font-weight="650" fill="#1b1f2a" text-anchor="middle">E 0.05</text>
+<text x="28" y="244" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">S2  So it is a bit worse on data it has not seen.</text>
+<rect x="404" y="218" width="110" height="42" rx="7" fill="rgba(22,163,74,0.18)" stroke="#ffffff" stroke-width="2"/>
+<text x="459.0" y="245" font-size="12.5" font-weight="650" fill="#1b1f2a" text-anchor="middle">E 0.10</text>
+<rect x="522" y="218" width="110" height="42" rx="7" fill="rgba(22,163,74,0.45)" stroke="#ffffff" stroke-width="2"/>
+<text x="577.0" y="245" font-size="12.5" font-weight="650" fill="#1b1f2a" text-anchor="middle">E 0.47</text>
+<rect x="640" y="218" width="110" height="42" rx="7" fill="rgba(22,163,74,0.15)" stroke="#ffffff" stroke-width="2"/>
+<text x="695.0" y="245" font-size="12.5" font-weight="650" fill="#1b1f2a" text-anchor="middle">E 0.06</text>
+<text x="28" y="294" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">S3  Adding more layers is the way to fix it.</text>
+<rect x="404" y="268" width="110" height="42" rx="7" fill="rgba(22,163,74,0.13)" stroke="#ffffff" stroke-width="2"/>
+<text x="459.0" y="295" font-size="12.5" font-weight="650" fill="#1b1f2a" text-anchor="middle">E 0.04</text>
+<rect x="522" y="268" width="110" height="42" rx="7" fill="rgba(22,163,74,0.16)" stroke="#ffffff" stroke-width="2"/>
+<text x="577.0" y="295" font-size="12.5" font-weight="650" fill="#1b1f2a" text-anchor="middle">E 0.08</text>
+<rect x="640" y="268" width="110" height="42" rx="7" fill="#fee2e2" stroke="#ffffff" stroke-width="2"/>
+<text x="695.0" y="295" font-size="12.5" font-weight="650" fill="#b91c1c" text-anchor="middle">C 0.71</text>
+<text x="28" y="340" font-size="12.5" font-weight="650" fill="#1b1f2a" text-anchor="start">Best support per key point  →  status  →  marks</text>
+<rect x="28" y="354" width="218" height="62" rx="10" fill="#ecfdf3" stroke="#16a34a" stroke-width="1.6"/>
+<text x="42" y="378" font-size="13" font-weight="650" fill="#15803d" text-anchor="start">KP1  matched</text>
+<text x="42" y="400" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">0.82 ≥ 0.6  →  2 / 2</text>
+<rect x="260" y="354" width="218" height="62" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.6"/>
+<text x="274" y="378" font-size="13" font-weight="650" fill="#c2410c" text-anchor="start">KP2  partial</text>
+<text x="274" y="400" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">0.4 ≤ 0.47 &lt; 0.6  →  1 / 2</text>
+<rect x="492" y="354" width="218" height="62" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.6"/>
+<text x="506" y="378" font-size="13" font-weight="650" fill="#b91c1c" text-anchor="start">KP3  contradicted</text>
+<text x="506" y="400" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">C 0.71 ≥ 0.5  →  0 / 1</text>
+<rect x="724" y="354" width="208" height="62" rx="10" fill="url(#gAccent)" stroke="none" stroke-width="1.2"/>
+<text x="738" y="378" font-size="14" font-weight="650" fill="#ffffff" text-anchor="start">Total  3 / 5</text>
+<text x="738" y="400" font-size="12" font-weight="400" fill="#ffffff" text-anchor="start">flags: partial_credit, contradiction</text>
+<text x="28" y="444" font-size="11.5" font-weight="400" fill="#7a8094" text-anchor="start" font-style="italic">Evidence sentence is stored per key point, so the teacher sees exactly why each mark was given (FR-10, FR-33).</text>
+<rect x="752" y="96" width="180" height="150" rx="10" fill="#f3f1ff" stroke="#6d5ef5" stroke-width="1.6"/>
+<text x="766" y="120" font-size="12.5" font-weight="650" fill="#4c3fd1" text-anchor="start">Partial-credit rule</text>
+<text x="766" y="142" font-size="11.5" font-weight="400" fill="#4b5163" text-anchor="start">matched  = full weight</text>
+<text x="766" y="160" font-size="11.5" font-weight="400" fill="#4b5163" text-anchor="start">partial  = half weight</text>
+<text x="766" y="178" font-size="11.5" font-weight="400" fill="#4b5163" text-anchor="start">missed  = 0</text>
+<text x="766" y="196" font-size="11.5" font-weight="400" fill="#4b5163" text-anchor="start">contradicted  = 0</text>
+<text x="766" y="214" font-size="11.5" font-weight="400" fill="#4b5163" text-anchor="start">sum, capped at max</text>
+</svg>

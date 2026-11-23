@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="Sentence-BERT bi-encoder with cosine similarity, and the lexical scorer" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>Sentence-BERT bi-encoder with cosine similarity, and the lexical scorer</title>
+<defs>
+<linearGradient id="gAccent" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d5ef5"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8f88d6"/></marker>
+</defs>
+<rect x="0.5" y="0.5" width="959" height="419" rx="14" fill="#fcfcff" stroke="#e4e1f7"/>
+<rect x="0.5" y="0.5" width="959" height="5" rx="2" fill="url(#gAccent)"/>
+<text x="28" y="40" font-size="18" font-weight="700" fill="#1b1f2a">Similarity scorers: Sentence-BERT and the lexical fallback</text>
+<text x="28" y="62" font-size="12.5" fill="#4b5163">Pluggable PairScorer interface (backend/app/grading/scorers.py)  ·  SARAS_GRADER = auto | lexical | sbert | nli | nli-onnx</text>
+<rect x="28" y="84" width="440" height="316" rx="12" fill="#ffffff" stroke="#e4e1f7"/>
+<text x="46" y="110" font-size="13.5" font-weight="650" fill="#1b1f2a" text-anchor="start">Sentence-BERT bi-encoder  (all-MiniLM-L6-v2)</text>
+<rect x="46" y="128" width="128" height="52" rx="10" fill="#ffffff" stroke="#d9d5f5" stroke-width="1.2"/>
+<text x="60" y="152" font-size="12" font-weight="650" fill="#1b1f2a" text-anchor="start">Student sentence</text>
+<rect x="46" y="300" width="128" height="52" rx="10" fill="#f3f1ff" stroke="#6d5ef5" stroke-width="1.6"/>
+<text x="60" y="324" font-size="12" font-weight="650" fill="#4c3fd1" text-anchor="start">Key point</text>
+<rect x="196" y="196" width="118" height="88" rx="10" fill="url(#gAccent)" stroke="none" stroke-width="1.2"/>
+<text x="255.0" y="220" font-size="12.5" font-weight="650" fill="#ffffff" text-anchor="middle">MiniLM encoder</text>
+<text x="255.0" y="242" font-size="12" font-weight="400" fill="#ffffff" text-anchor="middle">shared weights</text>
+<text x="255.0" y="260" font-size="12" font-weight="400" fill="#ffffff" text-anchor="middle">+ mean pooling</text>
+<path d="M 174 154 L 255 154 L 255 196" fill="none" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<path d="M 174 326 L 255 326 L 255 284" fill="none" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<rect x="336" y="128" width="116" height="52" rx="10" fill="#ffffff" stroke="#d9d5f5" stroke-width="1.2"/>
+<text x="394.0" y="152" font-size="12.5" font-weight="650" fill="#1b1f2a" text-anchor="middle">u  (384-d)</text>
+<rect x="336" y="300" width="116" height="52" rx="10" fill="#ffffff" stroke="#d9d5f5" stroke-width="1.2"/>
+<text x="394.0" y="324" font-size="12.5" font-weight="650" fill="#1b1f2a" text-anchor="middle">v  (384-d)</text>
+<path d="M 314 220 L 325 220 L 325 154 L 336 154" fill="none" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<path d="M 314 262 L 325 262 L 325 326 L 336 326" fill="none" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<rect x="336" y="206" width="116" height="70" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="394.0" y="230" font-size="12.5" font-weight="650" fill="#1d4ed8" text-anchor="middle">cosine</text>
+<text x="394.0" y="252" font-size="12" font-weight="400" fill="#4b5163" text-anchor="middle">u·v / (|u| |v|)</text>
+<path d="M 394 180 L 394 204" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<path d="M 394 300 L 394 278" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<text x="46" y="384" font-size="11.5" font-weight="400" fill="#7a8094" text-anchor="start" font-style="italic">Fast semantic baseline: paraphrases score high, but negations can too.</text>
+<rect x="492" y="84" width="440" height="316" rx="12" fill="#ffffff" stroke="#e4e1f7"/>
+<text x="510" y="110" font-size="13.5" font-weight="650" fill="#1b1f2a" text-anchor="start">Lexical scorer  (no model, always available)</text>
+<rect x="510" y="126" width="404" height="54" rx="10" fill="#ffffff" stroke="#d9d5f5" stroke-width="1.2"/>
+<text x="524" y="150" font-size="12.5" font-weight="650" fill="#1b1f2a" text-anchor="start">1  Normalise + stem</text>
+<text x="524" y="172" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">lower-case tokens, stop words removed, stemmed</text>
+<path d="M 712 180 L 712 190" fill="none" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<rect x="510" y="190" width="404" height="54" rx="10" fill="#ffffff" stroke="#d9d5f5" stroke-width="1.2"/>
+<text x="524" y="214" font-size="12.5" font-weight="650" fill="#1b1f2a" text-anchor="start">2  Fuzzy match for OCR noise</text>
+<text x="524" y="236" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">'regulanzation' ≈ 'regularisation', 'dota' ≈ 'data'</text>
+<path d="M 712 244 L 712 254" fill="none" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<rect x="510" y="254" width="404" height="54" rx="10" fill="#ffffff" stroke="#d9d5f5" stroke-width="1.2"/>
+<text x="524" y="278" font-size="12.5" font-weight="650" fill="#1b1f2a" text-anchor="start">3  IDF-weighted key-point recall</text>
+<text x="524" y="300" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">terms shared by several key points count less</text>
+<path d="M 712 308 L 712 318" fill="none" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<rect x="510" y="318" width="404" height="54" rx="10" fill="#f3f1ff" stroke="#6d5ef5" stroke-width="1.6"/>
+<text x="524" y="342" font-size="12.5" font-weight="650" fill="#4c3fd1" text-anchor="start">4  Polarity / negation check</text>
+<text x="524" y="364" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">'not', antonyms, un-/in-/non- prefixes → contradiction</text>
+<text x="510" y="384" font-size="11.5" font-weight="400" fill="#7a8094" text-anchor="start" font-style="italic">E = clip(1.2·(0.85·recall + 0.15·char-cosine) − 0.05)</text>
+</svg>

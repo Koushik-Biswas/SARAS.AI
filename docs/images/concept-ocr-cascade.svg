@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="470" viewBox="0 0 960 470" role="img" aria-label="OCR cascade: PDF text layer, vision LLM reader, TrOCR, teacher transcription" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>OCR cascade: PDF text layer, vision LLM reader, TrOCR, teacher transcription</title>
+<defs>
+<linearGradient id="gAccent" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d5ef5"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8f88d6"/></marker>
+</defs>
+<rect x="0.5" y="0.5" width="959" height="469" rx="14" fill="#fcfcff" stroke="#e4e1f7"/>
+<rect x="0.5" y="0.5" width="959" height="5" rx="2" fill="url(#gAccent)"/>
+<text x="28" y="40" font-size="18" font-weight="700" fill="#1b1f2a">Reading the page: the OCR cascade</text>
+<text x="28" y="62" font-size="12.5" fill="#4b5163">SARAS_OCR_ENGINE=auto  ·  every engine returns the same OcrLine(page, bbox, text, confidence), so segmentation never changes</text>
+<rect x="28" y="84" width="904" height="56" rx="10" fill="#f3f1ff" stroke="#6d5ef5" stroke-width="1.6"/>
+<text x="42" y="108" font-size="13.5" font-weight="650" fill="#4c3fd1" text-anchor="start">Rendered page</text>
+<text x="42" y="130" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">PyMuPDF at 150 DPI, grayscale  ·  PDF text-layer lines with pixel boxes  ·  OpenCV deskew + clean for image pages</text>
+<rect x="28" y="186" width="208" height="186" rx="10" fill="#ffffff" stroke="#d9d5f5" stroke-width="1.2"/>
+<text x="42" y="210" font-size="13.5" font-weight="650" fill="#1b1f2a" text-anchor="start">1 · PDF text layer</text>
+<text x="42" y="232" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">Typed / digitally written</text>
+<text x="42" y="250" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">sheets and demo data</text>
+<text x="42" y="268" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">Exact text + line boxes</text>
+<text x="42" y="286" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">confidence 0.99, no model</text>
+<rect x="42.0" y="342" width="62.7" height="20" rx="10" fill="#ecfdf3" stroke="#16a34a" stroke-width="1"/>
+<text x="73.3" y="356" font-size="11" font-weight="600" fill="#15803d" text-anchor="middle">instant</text>
+<rect x="260" y="186" width="208" height="186" rx="10" fill="#ffffff" stroke="#d9d5f5" stroke-width="1.2"/>
+<text x="274" y="210" font-size="13.5" font-weight="650" fill="#1b1f2a" text-anchor="start">2 · Vision LLM reader</text>
+<text x="274" y="232" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">Gemini Flash-Lite, then a</text>
+<text x="274" y="250" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">Groq vision model</text>
+<text x="274" y="268" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">Page JPEG → JSON lines</text>
+<text x="274" y="286" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">'unclear' lowers confidence</text>
+<rect x="274.0" y="342" width="120.1" height="20" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+<text x="334.0" y="356" font-size="11" font-weight="600" fill="#1d4ed8" text-anchor="middle">needs AI consent</text>
+<rect x="492" y="186" width="208" height="186" rx="10" fill="#ffffff" stroke="#d9d5f5" stroke-width="1.2"/>
+<text x="506" y="210" font-size="13.5" font-weight="650" fill="#1b1f2a" text-anchor="start">3 · TrOCR-small</text>
+<text x="506" y="232" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">ViT image encoder →</text>
+<text x="506" y="250" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">Transformer text decoder</text>
+<text x="506" y="268" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">on OpenCV line crops, int8</text>
+<text x="506" y="286" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">retry if mean conf &lt; 0.5</text>
+<rect x="506.0" y="342" width="120.1" height="20" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1"/>
+<text x="566.0" y="356" font-size="11" font-weight="600" fill="#c2410c" text-anchor="middle">ML extras, 8 GB+</text>
+<rect x="724" y="186" width="208" height="186" rx="10" fill="#ffffff" stroke="#d9d5f5" stroke-width="1.2"/>
+<text x="738" y="210" font-size="13.5" font-weight="650" fill="#1b1f2a" text-anchor="start">4 · Teacher types it</text>
+<text x="738" y="232" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">Line boxes kept, text empty</text>
+<text x="738" y="250" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">flag: needs_transcription</text>
+<text x="738" y="268" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">typed text is graded</text>
+<text x="738" y="286" font-size="12" font-weight="400" fill="#4b5163" text-anchor="start">immediately</text>
+<rect x="738.0" y="342" width="120.1" height="20" rx="10" fill="#f6f7f9" stroke="#cfd3dc" stroke-width="1"/>
+<text x="798.0" y="356" font-size="11" font-weight="600" fill="#4b5163" text-anchor="middle">always available</text>
+<path d="M 132 140 L 132 186" fill="none" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<path d="M 236 204 L 260 204" fill="none" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<text x="248" y="178" font-size="10.5" font-weight="400" fill="#7a8094" text-anchor="middle" font-style="italic">no text layer →</text>
+<path d="M 468 204 L 492 204" fill="none" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<text x="480" y="178" font-size="10.5" font-weight="400" fill="#7a8094" text-anchor="middle" font-style="italic">no reply / no key →</text>
+<path d="M 700 204 L 724 204" fill="none" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<text x="712" y="178" font-size="10.5" font-weight="400" fill="#7a8094" text-anchor="middle" font-style="italic">not installed →</text>
+<rect x="28" y="408" width="904" height="44" rx="10" fill="url(#gAccent)" stroke="none" stroke-width="1.2"/>
+<text x="480.0" y="432" font-size="13.5" font-weight="650" fill="#ffffff" text-anchor="middle">OcrLine rows  →  stored in ocr_lines  →  segmentation by question marker  →  grading</text>
+<path d="M 132.0 372 L 132.0 406" fill="none" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<path d="M 364.0 372 L 364.0 406" fill="none" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<path d="M 596.0 372 L 596.0 406" fill="none" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+<path d="M 828.0 372 L 828.0 406" fill="none" stroke="#8f88d6" stroke-width="1.7" marker-end="url(#arrow)"/>
+</svg>
