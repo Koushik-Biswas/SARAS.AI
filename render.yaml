@@ -1,17 +1,17 @@
-# Render Blueprint: one Docker web service (API + worker + built SPA) with a persistent disk.
-# Deploy: https://dashboard.render.com/blueprint/new?repo=https://github.com/Koushik-Biswas/SARAS.AI
+# Render Blueprint: the SARAS AI backend (FastAPI API + job worker) as one Docker web service.
+# One-click deploy: https://dashboard.render.com/blueprint/new?repo=https://github.com/Koushik-Biswas/SARAS.AI
+#
+# FREE plan: no persistent disk, so the SQLite database and uploads are WIPED on every
+# restart / redeploy / ~15 min idle spin-down. Fine for a demo. For real use switch to
+# plan: starter and add:
+#   disk: { name: saras-data, mountPath: /data, sizeGB: 5 }
 services:
   - type: web
     name: saras-ai
     runtime: docker
     dockerfilePath: ./Dockerfile
-    plan: starter            # a persistent disk needs a paid plan; "free" works but loses data on restart
+    plan: free
     healthCheckPath: /health
-    autoDeploy: true
-    disk:
-      name: saras-data
-      mountPath: /data       # SQLite database, uploads, page images, model cache
-      sizeGB: 1
     envVars:
       - key: SARAS_ENV
         value: prod
@@ -19,9 +19,13 @@ services:
         generateValue: true
       - key: FORWARDED_ALLOW_IPS
         value: "*"
+      - key: WEB_CONCURRENCY
+        value: "1"           # the app keeps per-process state: exactly one process
+      - key: SARAS_CORS_ORIGINS
+        sync: false          # enter your Vercel URL as JSON, e.g. ["https://saras-ai.vercel.app"]
       - key: SARAS_AI_GRADING
-        value: "off"         # set to "ensemble" + SARAS_AI_CONSENT=true + keys to enable AI marking
+        value: "off"         # "ensemble" + SARAS_AI_CONSENT=true + a key enables AI marking
       - key: SARAS_GROQ_API_KEY
-        sync: false          # asked for in the dashboard; leave empty to stay offline
+        sync: false          # optional; leave empty to stay offline
       - key: SARAS_GEMINI_API_KEY
         sync: false
