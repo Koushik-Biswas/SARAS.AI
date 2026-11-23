@@ -1,0 +1,11 @@
+# OPTIONAL ML extras: TrOCR handwriting OCR and the SBERT / NLI graders.
+# Needs >= 8 GB RAM. NOT for the 4 GB low-resource laptop profile; use Kaggle/Colab
+# or a bigger machine. Models download from Hugging Face on first use.
+#   pip install -r requirements-ml.txt
+# CPU-only PyTorch wheels (much smaller than the CUDA build):
+--extra-index-url https://download.pytorch.org/whl/cpu
+-r requirements.txt
+torch>=2.3
+transformers>=4.44
+sentence-transformers>=3.0
+Pillow>=10.0

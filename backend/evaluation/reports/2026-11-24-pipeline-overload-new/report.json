@@ -1,0 +1,200 @@
+{
+  "label": "overload, AFTER",
+  "scenario": "overload",
+  "engine_root": "C:\\Users\\Lenovo\\Desktop\\SARAS.AI\\backend\\app",
+  "wall_seconds": 30.11,
+  "timings": {
+    "render_preprocess": 8.647,
+    "ocr": 17.884,
+    "segmentation": 0.011,
+    "grading": 3.245,
+    "total": 30.018
+  },
+  "status": "processed",
+  "ocr_engine": "ai:groq",
+  "pages": 5,
+  "pages_read": 5,
+  "pages_unread": 0,
+  "sheet_flags": [],
+  "page_flags": {
+    "1": [
+      "poor_quality"
+    ],
+    "2": [
+      "poor_quality"
+    ],
+    "3": [
+      "poor_quality"
+    ],
+    "4": [
+      "poor_quality"
+    ],
+    "5": [
+      "poor_quality"
+    ]
+  },
+  "ocr": {
+    "cer_mean": 0.0,
+    "wer_mean": 0.0,
+    "cer_by_page": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "wer_by_page": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "answers": [
+    {
+      "question_no": 1,
+      "status": "auto_accepted",
+      "marks": 2.0,
+      "flags": [
+        "poor_quality",
+        "ai_weak_evidence",
+        "ai_verified",
+        "low_confidence"
+      ],
+      "grader": "ai-scheme"
+    },
+    {
+      "question_no": 2,
+      "status": "auto_accepted",
+      "marks": 3.0,
+      "flags": [
+        "poor_quality",
+        "ai_weak_evidence",
+        "ai_verified",
+        "low_confidence"
+      ],
+      "grader": "ai-scheme"
+    },
+    {
+      "question_no": 3,
+      "status": "auto_accepted",
+      "marks": 3.0,
+      "flags": [
+        "poor_quality",
+        "ai_weak_evidence",
+        "ai_verified",
+        "low_confidence"
+      ],
+      "grader": "ai-scheme"
+    },
+    {
+      "question_no": 4,
+      "status": "auto_accepted",
+      "marks": 4.0,
+      "flags": [
+        "poor_quality",
+        "ai_weak_evidence",
+        "ai_verified",
+        "low_confidence"
+      ],
+      "grader": "ai-scheme"
+    },
+    {
+      "question_no": 5,
+      "status": "auto_accepted",
+      "marks": 4.0,
+      "flags": [
+        "poor_quality",
+        "ai_weak_evidence",
+        "ai_verified",
+        "low_confidence"
+      ],
+      "grader": "ai-scheme"
+    }
+  ],
+  "total_ai_marks": 16.0,
+  "ai_runs": [
+    {
+      "task": "grade_sheet",
+      "status": "ok",
+      "provider": "groq",
+      "n": 2,
+      "input_tokens": 240,
+      "output_tokens": 120
+    },
+    {
+      "task": "marking_scheme",
+      "status": "ok",
+      "provider": "groq",
+      "n": 5,
+      "input_tokens": 600,
+      "output_tokens": 300
+    },
+    {
+      "task": "read_page",
+      "status": "error",
+      "provider": "gemini",
+      "n": 2,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "task": "read_page",
+      "status": "ok",
+      "provider": "groq",
+      "n": 5,
+      "input_tokens": 600,
+      "output_tokens": 300
+    }
+  ],
+  "ai_requests_sent": 14,
+  "fake_calls": 14,
+  "progress_stages": [
+    [
+      "preprocess",
+      "done",
+      9.215
+    ],
+    [
+      "recognition",
+      "done",
+      26.653
+    ],
+    [
+      "identification",
+      "done",
+      0.034
+    ],
+    [
+      "extraction",
+      "done",
+      0.016
+    ],
+    [
+      "rubric",
+      "done",
+      26.777
+    ],
+    [
+      "analysis",
+      "done",
+      1.589
+    ],
+    [
+      "marking",
+      "done",
+      0.006
+    ],
+    [
+      "verification",
+      "done",
+      1.576
+    ],
+    [
+      "results",
+      "done",
+      0.026
+    ]
+  ]
+}

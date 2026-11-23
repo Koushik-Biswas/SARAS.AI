@@ -1,0 +1,165 @@
+{
+  "questions": [
+    {
+      "question_no": 1,
+      "type": "short",
+      "max_marks": 3,
+      "prompt": "Define supervised learning.",
+      "model_answer": "Supervised learning is a type of machine learning in which a model is trained on labelled data. It learns a mapping from inputs to known outputs so that it can predict the outputs for new unseen inputs.",
+      "key_points": [
+        {
+          "text": "the model is trained on labelled data",
+          "weight": 1,
+          "keywords": [
+            "labelled",
+            "trained"
+          ]
+        },
+        {
+          "text": "it learns a mapping from inputs to known outputs",
+          "weight": 1,
+          "keywords": [
+            "mapping",
+            "inputs",
+            "outputs"
+          ]
+        },
+        {
+          "text": "it predicts outputs for new unseen inputs",
+          "weight": 1,
+          "keywords": [
+            "predict",
+            "unseen"
+          ]
+        }
+      ]
+    },
+    {
+      "question_no": 2,
+      "type": "long",
+      "max_marks": 5,
+      "prompt": "Explain overfitting in machine learning.",
+      "model_answer": "Overfitting is when a model fits the training data too closely. It learns the noise or random patterns in the training data, so it performs poorly on new unseen data. It is caused by an overly complex model or too little data. A remedy is regularisation, dropout, early stopping or collecting more data.",
+      "key_points": [
+        {
+          "text": "the model fits the training data too closely",
+          "weight": 1,
+          "keywords": [
+            "fits",
+            "training",
+            "closely"
+          ]
+        },
+        {
+          "text": "it learns noise or random patterns",
+          "weight": 1,
+          "keywords": [
+            "noise",
+            "random"
+          ]
+        },
+        {
+          "text": "it performs poorly on new unseen data",
+          "weight": 1,
+          "keywords": [
+            "poorly",
+            "unseen"
+          ]
+        },
+        {
+          "text": "it is caused by an overly complex model or too little data",
+          "weight": 1,
+          "keywords": [
+            "complex",
+            "little"
+          ]
+        },
+        {
+          "text": "a remedy such as regularisation, dropout, early stopping or more data",
+          "weight": 1,
+          "keywords": [
+            "regularisation",
+            "dropout",
+            "stopping"
+          ]
+        }
+      ]
+    },
+    {
+      "question_no": 3,
+      "type": "paragraph",
+      "max_marks": 5,
+      "prompt": "Describe how gradient descent is used to train a model.",
+      "model_answer": "Gradient descent is an iterative optimisation algorithm that minimises a loss function. It computes the gradient of the loss with respect to the model parameters and updates the parameters in the opposite direction of the gradient. The learning rate controls the size of each step; a learning rate that is too large overshoots the minimum while one that is too small converges slowly.",
+      "key_points": [
+        {
+          "text": "gradient descent is an iterative optimisation algorithm that minimises a loss function",
+          "weight": 1,
+          "keywords": [
+            "iterative",
+            "minimises",
+            "loss"
+          ]
+        },
+        {
+          "text": "it computes the gradient of the loss with respect to the parameters",
+          "weight": 1,
+          "keywords": [
+            "gradient",
+            "parameters"
+          ]
+        },
+        {
+          "text": "the parameters are updated in the opposite direction of the gradient",
+          "weight": 1,
+          "keywords": [
+            "opposite",
+            "direction"
+          ]
+        },
+        {
+          "text": "the learning rate controls the size of each step",
+          "weight": 1,
+          "keywords": [
+            "learning",
+            "rate",
+            "step"
+          ]
+        },
+        {
+          "text": "a learning rate that is too large overshoots the minimum and one that is too small converges slowly",
+          "weight": 1,
+          "keywords": [
+            "overshoots",
+            "slowly"
+          ]
+        }
+      ]
+    },
+    {
+      "question_no": 4,
+      "type": "short",
+      "max_marks": 2,
+      "prompt": "What is the purpose of a validation set?",
+      "model_answer": "A validation set is used to tune hyperparameters and to evaluate the model on data that was not used for training.",
+      "key_points": [
+        {
+          "text": "the validation set is used to tune hyperparameters",
+          "weight": 1,
+          "keywords": [
+            "tune",
+            "hyperparameters"
+          ]
+        },
+        {
+          "text": "it evaluates the model on data not used for training",
+          "weight": 1,
+          "keywords": [
+            "evaluate",
+            "training"
+          ]
+        }
+      ]
+    }
+  ]
+}

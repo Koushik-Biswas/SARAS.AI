@@ -1,0 +1,81 @@
+# SARAS AI — files that must never be committed.
+
+# ---- Secrets and local configuration
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# ---- Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+backend/.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---- Runtime data: database, uploaded answer sheets, rendered pages (student data)
+backend/data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# ---- Generated sample data (python -m scripts.make_samples); keep only the rubric
+backend/samples/*.pdf
+backend/samples/sheets/
+backend/samples/invalid/
+!backend/samples/rubric.json
+
+# ---- Node / frontend build
+node_modules/
+frontend/dist/
+dist/
+*.tsbuildinfo
+.vite/
+
+# ---- Logs and OS / editor clutter
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# ---- ML artefacts (models download from Hugging Face; never commit weights)
+/models/
+*.onnx
+*.safetensors
+*.bin
+backend/models/
+
+# ---- Added by the 2026-11-24 cleanup audit (additive; existing rules unchanged)
+# Private keys and credential files
+*.pem
+*.key
+*.p12
+credentials*.json
+# More caches and coverage output
+.tox/
+.ipynb_checkpoints/
+.cache/
+coverage/
+.eslintcache
+# Temp and backup files
+*.tmp
+*.bak
+*.orig
+*~
+# Benchmark run outputs (rendered pages, copies of input sheets); report.json / results.jsonl stay
+backend/evaluation/reports/*/storage/

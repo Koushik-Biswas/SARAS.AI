@@ -1,0 +1,238 @@
+/*
+ * SARAS AI design tokens.
+ * This is the ONLY file allowed to contain raw colour values. Components use the
+ * semantic custom properties below, so both themes stay consistent.
+ * Light = :root, Dark = [data-theme="dark"] on <html> (set before first paint by index.html).
+ * Contrast (WCAG 2.x) was measured for the key pairs; ratios are noted inline.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* ---- canvas & surfaces ---- */
+  --bg: #f7f8fa;
+  --bg-subtle: #f1f3f7;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --surface-sunken: #eef0f4;
+  --surface-hover: #f3f4f8;
+  --surface-translucent: rgba(255, 255, 255, 0.78);
+  --border: #e3e6ec; /* decorative hairline */
+  --border-strong: #8a93a6; /* input/control boundary: 3.09:1 on white */
+
+  /* ---- text ---- */
+  --text: #0f1729; /* 17:1 */
+  --text-muted: #4a5468; /* 7.2:1 on --bg */
+  --text-subtle: #646c7e; /* 4.6:1 on --surface-sunken, 5.3:1 on white */
+  --text-inverse: #ffffff;
+
+  /* ---- accent (refined indigo / violet) ---- */
+  --accent: #5b4fe0; /* white text 5.8:1 */
+  --accent-hover: #4e43cf;
+  --accent-active: #4338b8;
+  --accent-soft: #eeedfd;
+  --accent-soft-hover: #e2e0fb;
+  --accent-text: #4f46e5; /* accent-coloured text on surfaces, 5.4:1 on --accent-soft */
+  --accent-contrast: #ffffff;
+  --accent-gradient: linear-gradient(135deg, #6d5ef5 0%, #8b5cf6 55%, #c084fc 100%);
+  --logo-1: #6d5ef5;
+  --logo-2: #a855f7;
+  --logo-ink: #ffffff;
+
+  /* ---- status (always paired with an icon + text label) ---- */
+  --success: #16a34a;
+  --success-soft: #e7f6ec;
+  --success-text: #15703a; /* 5.5:1 on soft */
+  --warning: #d97706;
+  --warning-soft: #fef3e2;
+  --warning-text: #92510a; /* 5.6:1 on soft */
+  --danger: #dc2626;
+  --danger-hover: #c81e1e;
+  --danger-soft: #fdecec;
+  --danger-text: #b42318; /* 5.8:1 on soft */
+  --info: #2563eb;
+  --info-soft: #e8f0fe;
+  --info-text: #1d4ed8; /* 5.9:1 on soft */
+  --neutral-soft: #eef0f4;
+  --neutral-text: #4a5468;
+
+  /* ---- interaction ---- */
+  --focus-ring: #5b4fe0; /* 5.4:1 on --bg */
+  --overlay: rgba(15, 23, 41, 0.42);
+  --selection: rgba(91, 79, 224, 0.18);
+  --skeleton-base: #eceef3;
+  --skeleton-shine: #f7f8fb;
+
+  /* ---- elevation ---- */
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05), 0 1px 3px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 4px 8px -2px rgba(16, 24, 40, 0.08), 0 2px 4px -2px rgba(16, 24, 40, 0.05);
+  --shadow-lg: 0 16px 32px -8px rgba(16, 24, 40, 0.16), 0 6px 12px -6px rgba(16, 24, 40, 0.08);
+  --shadow-focus: 0 0 0 3px rgba(91, 79, 224, 0.22);
+  --btn-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  --shimmer: rgba(255, 255, 255, 0.45); /* moving highlight on gradient progress bars */
+
+  /* ---- brand panel mesh (login) ---- */
+  --mesh-1: rgba(109, 94, 245, 0.28);
+  --mesh-2: rgba(192, 132, 252, 0.22);
+  --mesh-3: rgba(56, 189, 248, 0.16);
+  --mesh-base: #eef0fb;
+
+  /* ---- charts ---- */
+  --chart-bar: #5b4fe0; /* 5.8:1 on white: meets 3:1 for graphics */
+  --chart-bar-hover: #4338b8;
+  --chart-bar-strong: #3b2fa6; /* highlighted (e.g. hardest question) */
+  --chart-track: #eef0f4;
+  --chart-grid: #e3e6ec;
+
+  /* ---- scanned-paper viewer (identical in both themes: paper is always white) ---- */
+  --paper: #ffffff;
+  --paper-shadow: 0 2px 6px rgba(0, 0, 0, 0.18), 0 12px 28px -8px rgba(0, 0, 0, 0.28);
+  --region-auto: #4338ca;
+  --region-manual: #0e7490;
+  --region-selected: #c2410c;
+  --region-blank: #4b5563;
+  --region-flagged: #b91c1c;
+  --region-label-text: #ffffff;
+  --region-fill: rgba(67, 56, 202, 0.08);
+  --region-fill-selected: rgba(194, 65, 12, 0.12);
+  /* Per-question categorical palette for region boxes (review + region editor). Paper is
+     white in both themes, so one set serves both. Each colour carries white label text at
+     >= 5:1 and outlines white paper at the same ratio; labels ("Q3", "Blank") always
+     accompany the colour. */
+  --region-q1: #4338ca; /* 7.9:1 */
+  --region-q2: #0f766e; /* 5.5:1 */
+  --region-q3: #c2410c; /* 5.2:1 */
+  --region-q4: #be185d; /* 6.0:1 */
+  --region-q5: #15803d; /* 5.0:1 */
+  --region-q6: #7e22ce; /* 7.0:1 */
+  --region-q7: #0369a1; /* 5.9:1 */
+  --region-q8: #854d0e; /* 6.9:1 */
+  --region-unassigned: #475569; /* 7.6:1, drawn dashed */
+  --region-ink: #0f172a; /* selection halo + handle outline on white paper, 17.9:1 */
+  --region-split: #dc2626; /* split guide line, 4.8:1 */
+  --region-draft: #6d28d9; /* rectangle being drawn, 7.1:1 */
+
+  /* ---- shape ---- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 999px;
+
+  /* ---- spacing (4px grid) ---- */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ---- typography ---- */
+  --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-md: 14px;
+  --text-lg: 16px;
+  --text-xl: 18px;
+  --text-2xl: 22px;
+  --text-3xl: 28px;
+  --text-4xl: 34px;
+
+  /* ---- motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 150ms;
+  --dur-base: 180ms;
+  --dur-slow: 220ms;
+
+  /* ---- layout & z-index ---- */
+  --sidebar-w: 248px;
+  --sidebar-w-collapsed: 68px;
+  --topbar-h: 60px;
+  --z-base: 0;
+  --z-sticky: 10;
+  --z-topbar: 20;
+  --z-sidebar: 30;
+  --z-dropdown: 40;
+  --z-overlay: 50;
+  --z-modal: 60;
+  --z-toast: 70;
+  --z-tooltip: 80;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0b0e14;
+  --bg-subtle: #0e121a;
+  --surface: #111520;
+  --surface-raised: #171c29;
+  --surface-sunken: #0a0d13;
+  --surface-hover: #1a2030;
+  --surface-translucent: rgba(13, 17, 26, 0.74);
+  --border: #232a39;
+  --border-strong: #5a6478; /* 3.06:1 on --surface */
+
+  --text: #e7eaf1; /* 14:1 on --surface-raised */
+  --text-muted: #a3acbd; /* 8:1 */
+  --text-subtle: #8690a3; /* 5.3:1 on --surface-raised */
+  --text-inverse: #0b0e14;
+
+  --accent: #6d62e8; /* slightly desaturated; white text 4.6:1 */
+  --accent-hover: #6157da;
+  --accent-active: #564cc9;
+  --accent-soft: #1e1c3a;
+  --accent-soft-hover: #27244a;
+  --accent-text: #a59cff; /* 7.6:1 on --surface */
+  --accent-contrast: #ffffff;
+  --accent-gradient: linear-gradient(135deg, #6a5ee6 0%, #8457e0 55%, #a876e8 100%);
+  --logo-1: #7a6ff0;
+  --logo-2: #a35cf0;
+  --logo-ink: #ffffff;
+
+  --success: #4ade80;
+  --success-soft: #122a1e;
+  --success-text: #7dd3a0; /* 8.5:1 on soft */
+  --warning: #fbbf24;
+  --warning-soft: #2a2112;
+  --warning-text: #f5c46b; /* 9.8:1 */
+  --danger: #e5484d;
+  --danger-hover: #ef6b6f; /* dark text on danger: 4.9:1 base, higher on hover */
+  --danger-soft: #2e1618;
+  --danger-text: #f79a9a; /* 8:1 */
+  --info: #60a5fa;
+  --info-soft: #14213a;
+  --info-text: #93c0fb; /* 8.5:1 */
+  --neutral-soft: #1c2230;
+  --neutral-text: #b4bccb;
+
+  --focus-ring: #a59cff;
+  --overlay: rgba(3, 5, 10, 0.66);
+  --selection: rgba(165, 156, 255, 0.28);
+  --skeleton-base: #161b27;
+  --skeleton-shine: #1f2535;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 10px -2px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 18px 40px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  --shadow-focus: 0 0 0 3px rgba(165, 156, 255, 0.28);
+  --btn-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  --mesh-1: rgba(109, 98, 232, 0.34);
+  --mesh-2: rgba(168, 118, 232, 0.22);
+  --mesh-3: rgba(56, 152, 248, 0.14);
+  --mesh-base: #0e1120;
+
+  --chart-bar: #8b80f9; /* 5.7:1 on --surface */
+  --chart-bar-hover: #a59cff;
+  --chart-bar-strong: #c4bdff;
+  --chart-track: #1a2030;
+  --chart-grid: #232a39;
+}

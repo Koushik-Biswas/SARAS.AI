@@ -1,0 +1,131 @@
+{
+  "label": "overload, BEFORE",
+  "scenario": "overload",
+  "engine_root": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\saras_baseline\\app",
+  "wall_seconds": 73.62,
+  "timings": {
+    "render_preprocess": 12.019,
+    "ocr": 59.385,
+    "segmentation": 0.077,
+    "grading": 1.652,
+    "total": 73.547
+  },
+  "status": "processed",
+  "ocr_engine": "ai:groq",
+  "pages": 5,
+  "pages_read": 5,
+  "pages_unread": 0,
+  "sheet_flags": [],
+  "page_flags": {
+    "1": [
+      "poor_quality"
+    ],
+    "2": [
+      "poor_quality"
+    ],
+    "3": [
+      "poor_quality"
+    ],
+    "4": [
+      "poor_quality"
+    ],
+    "5": [
+      "poor_quality"
+    ]
+  },
+  "ocr": {
+    "cer_mean": 0.0,
+    "wer_mean": 0.0,
+    "cer_by_page": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "wer_by_page": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "answers": [
+    {
+      "question_no": 1,
+      "status": "auto_accepted",
+      "marks": 2.0,
+      "flags": [
+        "poor_quality"
+      ],
+      "grader": "ai-direct"
+    },
+    {
+      "question_no": 2,
+      "status": "auto_accepted",
+      "marks": 3.0,
+      "flags": [
+        "poor_quality"
+      ],
+      "grader": "ai-direct"
+    },
+    {
+      "question_no": 3,
+      "status": "auto_accepted",
+      "marks": 3.0,
+      "flags": [
+        "poor_quality"
+      ],
+      "grader": "ai-direct"
+    },
+    {
+      "question_no": 4,
+      "status": "auto_accepted",
+      "marks": 4.0,
+      "flags": [
+        "poor_quality"
+      ],
+      "grader": "ai-direct"
+    },
+    {
+      "question_no": 5,
+      "status": "auto_accepted",
+      "marks": 4.0,
+      "flags": [
+        "poor_quality"
+      ],
+      "grader": "ai-direct"
+    }
+  ],
+  "total_ai_marks": 16.0,
+  "ai_runs": [
+    {
+      "task": "mark_sheet_direct",
+      "status": "ok",
+      "provider": "groq",
+      "n": 1,
+      "input_tokens": 120,
+      "output_tokens": 60
+    },
+    {
+      "task": "read_page",
+      "status": "error",
+      "provider": "gemini",
+      "n": 15,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "task": "read_page",
+      "status": "ok",
+      "provider": "groq",
+      "n": 5,
+      "input_tokens": 600,
+      "output_tokens": 300
+    }
+  ],
+  "ai_requests_sent": 21,
+  "fake_calls": 21,
+  "progress_stages": null
+}

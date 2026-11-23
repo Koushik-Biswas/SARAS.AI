@@ -1,0 +1,269 @@
+{
+  "label": "dev, question-only, default marking, fixed router",
+  "engine": "direct-v1",
+  "engine_root": "C:\\Users\\Lenovo\\Desktop\\SARAS.AI\\backend\\app",
+  "mode": "direct",
+  "data": "evaluation\\data\\grading_benchmark_dev.json",
+  "providers": [
+    "groq:openai/gpt-oss-120b"
+  ],
+  "style": "moderate",
+  "sheet_size": 4,
+  "n_sheets": 11,
+  "overall": {
+    "n": 42,
+    "n_scored": 41,
+    "n_unmarked": 1,
+    "mae": 0.36,
+    "exact": 0.561,
+    "within_0.5": 0.854,
+    "within_1": 0.902,
+    "mean_signed_error": 0.165,
+    "mae_normalised": 0.089,
+    "mae_unambiguous": 0.365
+  },
+  "by_category": {
+    "contradiction_flipped_fact": {
+      "n": 3,
+      "n_scored": 3,
+      "n_unmarked": 0,
+      "mae": 0.5,
+      "exact": 0.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": -0.5,
+      "mae_normalised": 0.139,
+      "mae_unambiguous": 0.5
+    },
+    "contradiction_negation": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.25,
+      "exact": 0.5,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.25,
+      "mae_normalised": 0.125,
+      "mae_unambiguous": 0.25
+    },
+    "copied_question": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 1.0,
+      "exact": 0.0,
+      "within_0.5": 0.5,
+      "within_1": 0.5,
+      "mean_signed_error": 1.0,
+      "mae_normalised": 0.312,
+      "mae_unambiguous": 1.0
+    },
+    "correct_paraphrase": {
+      "n": 4,
+      "n_scored": 4,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "correct_verbatim": {
+      "n": 3,
+      "n_scored": 3,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "empty_or_trivial": {
+      "n": 2,
+      "n_scored": 1,
+      "n_unmarked": 1,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "extra_incorrect_statement": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "incorrect": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.25,
+      "exact": 0.5,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.25,
+      "mae_normalised": 0.083,
+      "mae_unambiguous": 0.25
+    },
+    "keyword_stuffing": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 1.75,
+      "exact": 0.0,
+      "within_0.5": 0.0,
+      "within_1": 0.5,
+      "mean_signed_error": 1.75,
+      "mae_normalised": 0.308,
+      "mae_unambiguous": 1.75
+    },
+    "missing_key_concepts": {
+      "n": 4,
+      "n_scored": 4,
+      "n_unmarked": 0,
+      "mae": 0.625,
+      "exact": 0.25,
+      "within_0.5": 0.75,
+      "within_1": 0.75,
+      "mean_signed_error": 0.625,
+      "mae_normalised": 0.114,
+      "mae_unambiguous": 0.833
+    },
+    "numeric_mismatch": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.5,
+      "exact": 0.5,
+      "within_0.5": 0.5,
+      "within_1": 1.0,
+      "mean_signed_error": 0.5,
+      "mae_normalised": 0.125,
+      "mae_unambiguous": 0.5
+    },
+    "ocr_noise": {
+      "n": 3,
+      "n_scored": 3,
+      "n_unmarked": 0,
+      "mae": 0.333,
+      "exact": 0.333,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": -0.333,
+      "mae_normalised": 0.083,
+      "mae_unambiguous": 0.25
+    },
+    "off_topic": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "partial": {
+      "n": 4,
+      "n_scored": 4,
+      "n_unmarked": 0,
+      "mae": 0.188,
+      "exact": 0.5,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.188,
+      "mae_normalised": 0.078,
+      "mae_unambiguous": 0.188
+    },
+    "role_swap": {
+      "n": 3,
+      "n_scored": 3,
+      "n_unmarked": 0,
+      "mae": 0.5,
+      "exact": 0.667,
+      "within_0.5": 0.667,
+      "within_1": 0.667,
+      "mean_signed_error": -0.5,
+      "mae_normalised": 0.1,
+      "mae_unambiguous": 0.5
+    },
+    "wrong_concept": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    }
+  },
+  "latency_s": {
+    "wall_total": 6.36,
+    "mean_per_sheet": 0.58,
+    "p50_per_sheet": 0.04,
+    "max_per_sheet": 2.1
+  },
+  "requests": {
+    "sent": 11,
+    "ok": 11,
+    "cache_hits": 7,
+    "per_sheet": 1.0
+  },
+  "tokens": {
+    "input": 10272,
+    "output": 5654,
+    "per_sheet": 1448,
+    "per_answer": 379
+  },
+  "cost_usd_list_price": {
+    "total": 0.00493,
+    "per_sheet": 0.000448,
+    "prices_per_1m": [
+      0.15,
+      0.6
+    ]
+  },
+  "verification": {
+    "answers_re_marked": 0,
+    "confirmed": 0,
+    "changed": 0,
+    "failed": 0
+  },
+  "usage_by_task": [
+    {
+      "status": "cache_hit",
+      "task": "mark_sheet_direct",
+      "rows": 7,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "avg_latency_ms": 6
+    },
+    {
+      "status": "ok",
+      "task": "mark_sheet_direct",
+      "rows": 11,
+      "input_tokens": 10272,
+      "output_tokens": 5654,
+      "avg_latency_ms": 1590
+    }
+  ]
+}

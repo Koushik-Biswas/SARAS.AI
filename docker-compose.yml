@@ -1,0 +1,94 @@
+# SARAS AI — extended profile (PRD 18.5 / 18.6): PostgreSQL + the app container.
+# For machines with 8 GB RAM or more. On the 4 GB laptop do NOT use Docker (Docker Desktop
+# alone needs 1-2 GB); run the low-resource profile instead: scripts/run_prod.ps1.
+#
+#   export SARAS_JWT_SECRET="$(python -c 'import secrets; print(secrets.token_urlsafe(48))')"
+#   export SARAS_DB_PASSWORD="<a password without URL special characters>"
+#   docker compose up -d --build
+#   open http://localhost:8000          (API docs: http://localhost:8000/api/docs)
+#
+# Both variables are required; compose refuses to start without them. Put them in a
+# git-ignored .env file next to this file if you prefer.
+#
+# Background jobs: the PRD's extended profile names Celery + Redis. This codebase replaces
+# them with a database-backed job table drained by a worker thread inside each app process
+# (app/worker.py). Jobs are claimed with an optimistic UPDATE, so several processes can
+# share one PostgreSQL database safely. To add processing capacity, start the optional
+# worker service as well (same image, no published port):
+#   docker compose --profile scale up -d --scale worker=2
+# There is therefore no redis container. The PRD's separate frontend container is not
+# needed either: the app serves the built SPA itself.
+
+name: saras-ai
+
+x-app-env: &app-env
+  SARAS_ENV: prod
+  SARAS_JWT_SECRET: ${SARAS_JWT_SECRET:?Set SARAS_JWT_SECRET to a long random string}
+  SARAS_DATABASE_URL: postgresql+psycopg://saras:${SARAS_DB_PASSWORD:?Set SARAS_DB_PASSWORD}@db:5432/saras
+  SARAS_STORAGE_DIR: /data/storage
+  SARAS_OCR_ENGINE: ${SARAS_OCR_ENGINE:-auto}
+  SARAS_GRADER: ${SARAS_GRADER:-auto}
+  SARAS_LOG_LEVEL: ${SARAS_LOG_LEVEL:-INFO}
+
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: saras
+      POSTGRES_DB: saras
+      POSTGRES_PASSWORD: ${SARAS_DB_PASSWORD:?Set SARAS_DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U saras -d saras"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    # PRD 18.5: postgres 1 CPU / 1 GB
+    cpus: 1.0
+    mem_limit: 1g
+
+  app:
+    build:
+      context: .
+      args:
+        # 1 = also install TrOCR / SBERT / NLI (requirements-ml.txt); needs the 6 GB below.
+        INSTALL_ML: ${SARAS_INSTALL_ML:-0}
+    image: saras-ai:1.0.0
+    restart: unless-stopped
+    environment: *app-env
+    ports:
+      - "${SARAS_PORT:-8000}:8000"
+    volumes:
+      - storage:/data
+    depends_on:
+      db:
+        condition: service_healthy
+    # PRD 18.5: api 1 CPU / 512 MB + worker 4 CPU / 6 GB. The worker runs inside the app
+    # process here, so the app gets the worker's budget. Lower SARAS_APP_CPUS on machines
+    # with fewer than 4 cores (Docker rejects a limit above the host's core count).
+    cpus: ${SARAS_APP_CPUS:-4}
+    mem_limit: 6g
+
+  # Optional extra processing capacity (see the header). Same image and database; it also
+  # serves the API on its private port, but only `app` is published.
+  worker:
+    profiles: ["scale"]
+    image: saras-ai:1.0.0
+    restart: unless-stopped
+    environment: *app-env
+    volumes:
+      - storage:/data
+    depends_on:
+      db:
+        condition: service_healthy
+      app:
+        condition: service_started
+    cpus: ${SARAS_APP_CPUS:-4}
+    mem_limit: 6g
+
+volumes:
+  pgdata:
+  storage:

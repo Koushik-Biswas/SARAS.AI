@@ -1,0 +1,31 @@
+# Keep the Docker build context small and free of secrets and student data.
+.git
+.github
+**/.env
+**/.env.*
+!backend/.env.example
+
+# Python
+**/__pycache__
+**/*.py[cod]
+backend/.venv
+**/.venv
+**/.pytest_cache
+
+# Runtime data and generated samples (student data never goes into an image)
+backend/data
+backend/samples
+**/*.db
+**/*.sqlite3
+
+# Node: dependencies are installed and dist is built inside the image
+**/node_modules
+frontend/dist
+
+# Not needed at runtime
+backend/tests
+docs
+*.md
+**/*.log
+.vscode
+.idea

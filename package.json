@@ -1,0 +1,20 @@
+{
+  "name": "saras-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SARAS AI — Smart Assessment and Recognition Automation System. Root helper scripts: the web app lives in frontend/, the API in backend/.",
+  "engines": {
+    "node": ">=18.18"
+  },
+  "scripts": {
+    "postinstall": "node scripts/saras.mjs install-web",
+    "setup": "node scripts/saras.mjs setup",
+    "dev": "node scripts/saras.mjs dev",
+    "dev:api": "node scripts/saras.mjs api",
+    "dev:web": "node scripts/saras.mjs web",
+    "build": "node scripts/saras.mjs build",
+    "start": "node scripts/saras.mjs start",
+    "test": "node scripts/saras.mjs test",
+    "seed": "node scripts/saras.mjs seed"
+  }
+}

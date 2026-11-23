@@ -1,0 +1,38 @@
+# SARAS AI backend: runtime dependencies (low-resource profile, CPU only).
+# Pinned to the versions this backend is tested with (Python 3.12).
+#   pip install -r requirements.txt
+# The optional ML models (TrOCR, SBERT, NLI) are in requirements-ml.txt. Without them the
+# app still runs: OCR falls back to the PDF text layer / manual transcription and
+# grading to the lexical scorer.
+
+# Web API
+fastapi==0.165.0
+starlette==1.10.0
+uvicorn[standard]==0.54.0
+python-multipart==0.0.34
+pydantic==2.14.4
+pydantic-settings==2.16.3
+python-dotenv==1.2.4
+email-validator==2.4.0
+
+# Storage and auth
+SQLAlchemy==2.1.9
+PyJWT==2.15.1
+argon2-cffi==25.1.0
+
+# Processing pipeline
+pymupdf==2.1
+opencv-python-headless==5.1.0.95
+numpy==2.5.5
+onnxruntime==1.32.0
+# Tokenizer for the local ONNX NLI grader (app/grading/onnx_nli.py); Rust wheel, no PyTorch.
+# Model files: python -m scripts.download_models
+tokenizers==0.23.3
+psutil==7.2.2
+
+# Optional AI grading (app/llm): Groq / Gemini / OpenRouter / Ollama over plain HTTPS, no SDKs.
+httpx==0.28.1
+
+# PostgreSQL driver: only needed when SARAS_DATABASE_URL points at PostgreSQL
+# (postgresql+psycopg://...). SQLite needs nothing extra.
+psycopg[binary]>=3.2,<4

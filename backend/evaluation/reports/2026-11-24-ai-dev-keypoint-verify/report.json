@@ -1,0 +1,285 @@
+{
+  "label": "dev, key points, + selective second marking (after)",
+  "engine": "keypoint-grade-sheet-v2+verify",
+  "engine_root": "C:\\Users\\Lenovo\\Desktop\\SARAS.AI\\backend\\app",
+  "mode": "keypoint",
+  "data": "evaluation\\data\\grading_benchmark_dev.json",
+  "providers": [
+    "groq:openai/gpt-oss-120b"
+  ],
+  "style": "moderate",
+  "sheet_size": 4,
+  "n_sheets": 11,
+  "overall": {
+    "n": 42,
+    "n_scored": 41,
+    "n_unmarked": 1,
+    "mae": 0.341,
+    "exact": 0.78,
+    "within_0.5": 0.878,
+    "within_1": 0.951,
+    "mean_signed_error": 0.171,
+    "mae_normalised": 0.066,
+    "mae_unambiguous": 0.346
+  },
+  "by_category": {
+    "contradiction_flipped_fact": {
+      "n": 3,
+      "n_scored": 3,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "contradiction_negation": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "copied_question": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "correct_paraphrase": {
+      "n": 4,
+      "n_scored": 4,
+      "n_unmarked": 0,
+      "mae": 0.25,
+      "exact": 0.75,
+      "within_0.5": 0.75,
+      "within_1": 1.0,
+      "mean_signed_error": -0.25,
+      "mae_normalised": 0.042,
+      "mae_unambiguous": 0.25
+    },
+    "correct_verbatim": {
+      "n": 3,
+      "n_scored": 3,
+      "n_unmarked": 0,
+      "mae": 0.167,
+      "exact": 0.667,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": -0.167,
+      "mae_normalised": 0.033,
+      "mae_unambiguous": 0.167
+    },
+    "empty_or_trivial": {
+      "n": 2,
+      "n_scored": 1,
+      "n_unmarked": 1,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "extra_incorrect_statement": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "incorrect": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "keyword_stuffing": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 4.875,
+      "exact": 0.0,
+      "within_0.5": 0.0,
+      "within_1": 0.0,
+      "mean_signed_error": 4.875,
+      "mae_normalised": 0.896,
+      "mae_unambiguous": 4.875
+    },
+    "missing_key_concepts": {
+      "n": 4,
+      "n_scored": 4,
+      "n_unmarked": 0,
+      "mae": 0.125,
+      "exact": 0.75,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": -0.125,
+      "mae_normalised": 0.042,
+      "mae_unambiguous": 0.0
+    },
+    "numeric_mismatch": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.125,
+      "exact": 0.5,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": -0.125,
+      "mae_normalised": 0.031,
+      "mae_unambiguous": 0.125
+    },
+    "ocr_noise": {
+      "n": 3,
+      "n_scored": 3,
+      "n_unmarked": 0,
+      "mae": 0.25,
+      "exact": 0.667,
+      "within_0.5": 0.667,
+      "within_1": 1.0,
+      "mean_signed_error": -0.25,
+      "mae_normalised": 0.062,
+      "mae_unambiguous": 0.375
+    },
+    "off_topic": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "partial": {
+      "n": 4,
+      "n_scored": 4,
+      "n_unmarked": 0,
+      "mae": 0.312,
+      "exact": 0.5,
+      "within_0.5": 0.75,
+      "within_1": 1.0,
+      "mean_signed_error": 0.062,
+      "mae_normalised": 0.062,
+      "mae_unambiguous": 0.312
+    },
+    "role_swap": {
+      "n": 3,
+      "n_scored": 3,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "wrong_concept": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    }
+  },
+  "latency_s": {
+    "wall_total": 306.41,
+    "mean_per_sheet": 27.85,
+    "p50_per_sheet": 26.35,
+    "max_per_sheet": 43.77
+  },
+  "requests": {
+    "sent": 23,
+    "ok": 20,
+    "cache_hits": 11,
+    "per_sheet": 2.09
+  },
+  "tokens": {
+    "input": 37886,
+    "output": 30158,
+    "per_sheet": 6186,
+    "per_answer": 1620
+  },
+  "cost_usd_list_price": {
+    "total": 0.02378,
+    "per_sheet": 0.002162,
+    "prices_per_1m": [
+      0.15,
+      0.6
+    ]
+  },
+  "verification": {
+    "answers_re_marked": 18,
+    "confirmed": 14,
+    "changed": 4,
+    "failed": 0
+  },
+  "usage_by_task": [
+    {
+      "status": "cache_hit",
+      "task": "grade_sheet",
+      "rows": 11,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "avg_latency_ms": 20
+    },
+    {
+      "status": "invalid",
+      "task": "grade_sheet",
+      "rows": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "avg_latency_ms": 8184
+    },
+    {
+      "status": "ok",
+      "task": "grade_sheet",
+      "rows": 20,
+      "input_tokens": 37886,
+      "output_tokens": 30158,
+      "avg_latency_ms": 3850
+    },
+    {
+      "status": "rate_limited",
+      "task": "grade_sheet",
+      "rows": 2,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "avg_latency_ms": 248
+    }
+  ]
+}

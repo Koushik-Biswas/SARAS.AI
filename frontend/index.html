@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SARAS AI - Smart Assessment and Recognition Automation System: AI-assisted exam answer sheet evaluation" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0e14" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>SARAS AI</title>
+    <script>
+      // No-flash theme: apply the saved (or system) theme before first paint.
+      // Mirrors src/theme/ThemeProvider.tsx (localStorage key "saras-theme": light | dark | system).
+      (function () {
+        var mode = "system";
+        try {
+          var saved = localStorage.getItem("saras-theme");
+          if (saved === "light" || saved === "dark" || saved === "system") mode = saved;
+        } catch (e) {}
+        var dark = mode === "dark" || (mode === "system" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        var root = document.documentElement;
+        root.setAttribute("data-theme", dark ? "dark" : "light");
+        root.style.colorScheme = dark ? "dark" : "light";
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>SARAS AI needs JavaScript enabled.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

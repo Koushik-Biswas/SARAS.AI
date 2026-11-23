@@ -1,0 +1,92 @@
+{
+  "exam": {
+    "title": "Machine Learning Unit Test",
+    "subject": "Machine Learning",
+    "date": "2026-11-20",
+    "total_marks": 15
+  },
+  "sheets": [
+    {
+      "file": "sheets/ML001_full_marks.pdf",
+      "student_ref": "ML001_full_marks",
+      "description": "every key point covered"
+    },
+    {
+      "file": "sheets/ML002_partial.pdf",
+      "student_ref": "ML002_partial",
+      "description": "partly correct answers"
+    },
+    {
+      "file": "sheets/ML003_paraphrased.pdf",
+      "student_ref": "ML003_paraphrased",
+      "description": "correct answers in the student's own words, mixed marker styles"
+    },
+    {
+      "file": "sheets/ML004_ocr_noisy.pdf",
+      "student_ref": "ML004_ocr_noisy",
+      "description": "misspellings such as 'regulanzation' and 'dota'"
+    },
+    {
+      "file": "sheets/ML005_skipped_question.pdf",
+      "student_ref": "ML005_skipped_question",
+      "description": "Q3 left empty under its marker"
+    },
+    {
+      "file": "sheets/ML006_duplicate_marker.pdf",
+      "student_ref": "ML006_duplicate_marker",
+      "description": "Q2 started, abandoned and restarted under a second Q2 marker"
+    },
+    {
+      "file": "sheets/ML007_out_of_order.pdf",
+      "student_ref": "ML007_out_of_order",
+      "description": "answers written in the order Q1, Q3, Q2, Q4"
+    },
+    {
+      "file": "sheets/ML008_continuation.pdf",
+      "student_ref": "ML008_continuation",
+      "description": "Q2 continues onto page 2 without a new marker"
+    },
+    {
+      "file": "sheets/ML009_flipped_fact.pdf",
+      "student_ref": "ML009_flipped_fact",
+      "description": "claims an overfitted model performs well on new data"
+    },
+    {
+      "file": "sheets/ML010_adversarial.pdf",
+      "student_ref": "ML010_adversarial",
+      "description": "copied question, keyword list, off-topic text, Q4 missing"
+    },
+    {
+      "file": "sheets/ML011_empty_sheet.pdf",
+      "student_ref": "ML011_empty_sheet",
+      "description": "a blank page"
+    },
+    {
+      "file": "sheets/ML012_scanned_image_only.pdf",
+      "student_ref": "ML012_scanned_image_only",
+      "description": "rasterised page without a text layer"
+    }
+  ],
+  "invalid": [
+    {
+      "file": "invalid/corrupted.pdf",
+      "expected_status": 422,
+      "expected_code": "unreadable_pdf"
+    },
+    {
+      "file": "invalid/not_a_pdf.pdf",
+      "expected_status": 415,
+      "expected_code": "unsupported_media_type"
+    },
+    {
+      "file": "invalid/password_protected.pdf",
+      "expected_status": 422,
+      "expected_code": "unreadable_pdf"
+    },
+    {
+      "file": "invalid/too_many_pages_51.pdf",
+      "expected_status": 413,
+      "expected_code": "file_too_large"
+    }
+  ]
+}

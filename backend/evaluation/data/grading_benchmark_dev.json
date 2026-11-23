@@ -1,0 +1,606 @@
+{
+  "version": 1,
+  "provenance": "Synthetic benchmark authored by an AI agent acting as an independent teacher, labelled once with a self-review pass. NOT teacher-validated. Use for regression testing and relative comparison of grading engines, not as a claim of real-world accuracy. DEV split: may be used freely while developing the grader.",
+  "questions": [
+    {
+      "id": "q01_ml_overfitting",
+      "domain": "machine learning",
+      "type": "short",
+      "max_marks": 2,
+      "prompt": "What is overfitting in machine learning? Mention one way to reduce it.",
+      "model_answer": "Overfitting happens when a model learns the training data too closely, memorising noise and random fluctuations instead of the underlying pattern. As a result it shows very high accuracy on the training set but performs poorly on new, unseen test data, i.e. it fails to generalise. It can be reduced by regularisation (L1/L2), dropout, early stopping, collecting more training data, cross-validation or using a simpler model.",
+      "key_points": [
+        {"text": "The model learns the training data too closely, memorising noise and random fluctuations, so its training error is very low.", "weight": 0.5, "keywords": ["training", "trained"]},
+        {"text": "It performs poorly on new, unseen (test/validation) data, i.e. it fails to generalise.", "weight": 1, "keywords": []},
+        {"text": "Names a valid way to reduce overfitting, e.g. regularisation (L1/L2), dropout, early stopping, more training data, cross-validation, pruning or a simpler model.", "weight": 0.5, "keywords": []}
+      ]
+    },
+    {
+      "id": "q02_bio_arteries_veins",
+      "domain": "biology",
+      "type": "short",
+      "max_marks": 3,
+      "prompt": "Differentiate between arteries and veins on the basis of the direction of blood flow, the nature of their walls and the presence of valves.",
+      "model_answer": "Arteries carry blood away from the heart to different parts of the body, whereas veins bring blood from the body back to the heart. Arteries have thick, muscular and elastic walls to withstand the high pressure of blood, while veins have thinner and less elastic walls. Veins have valves that prevent the backflow of blood; arteries generally do not have valves.",
+      "key_points": [
+        {"text": "Arteries carry blood away from the heart to the body, whereas veins carry blood from the body back to the heart.", "weight": 1, "keywords": []},
+        {"text": "Arteries have thick, muscular and elastic walls (to withstand high pressure), whereas veins have thinner, less elastic walls.", "weight": 1, "keywords": ["thick", "thin"]},
+        {"text": "Veins have valves that prevent backflow of blood, whereas arteries generally do not have valves.", "weight": 1, "keywords": ["valve"]}
+      ]
+    },
+    {
+      "id": "q03_phy_newton_second_law",
+      "domain": "physics",
+      "type": "short",
+      "max_marks": 3,
+      "prompt": "State Newton's second law of motion. Calculate the force required to give a body of mass 5 kg an acceleration of 2 m/s².",
+      "model_answer": "Newton's second law states that the rate of change of momentum of a body is directly proportional to the net external force applied on it and takes place in the direction of the force. For a body of constant mass this gives F = ma. Here F = m × a = 5 kg × 2 m/s² = 10 N.",
+      "key_points": [
+        {"text": "Statement: the rate of change of momentum of a body is directly proportional to the net applied force and takes place in the direction of the force.", "weight": 1, "keywords": ["momentum"]},
+        {"text": "For constant mass this gives F = ma (force = mass × acceleration).", "weight": 0.5, "keywords": []},
+        {"text": "Correct calculation with unit: F = 5 kg × 2 m/s² = 10 N.", "weight": 1.5, "keywords": ["10"]}
+      ]
+    },
+    {
+      "id": "q04_chem_redox",
+      "domain": "chemistry",
+      "type": "short",
+      "max_marks": 2,
+      "prompt": "Define oxidation and reduction in terms of electron transfer.",
+      "model_answer": "Oxidation is the loss of electrons by an atom, ion or molecule; its oxidation number increases. Reduction is the gain of electrons by an atom, ion or molecule; its oxidation number decreases. (OIL RIG: Oxidation Is Loss, Reduction Is Gain.)",
+      "key_points": [
+        {"text": "Oxidation is the loss of electrons by an atom, ion or molecule (its oxidation number increases).", "weight": 1, "keywords": ["electron"]},
+        {"text": "Reduction is the gain of electrons by an atom, ion or molecule (its oxidation number decreases).", "weight": 1, "keywords": ["electron"]}
+      ]
+    },
+    {
+      "id": "q05_cs_stack_queue",
+      "domain": "computer science",
+      "type": "long",
+      "max_marks": 5,
+      "prompt": "Differentiate between a stack and a queue. Give one real-life or computing application of each.",
+      "model_answer": "A stack is a linear data structure that follows LIFO (Last In, First Out): the element inserted last is removed first. Insertion (push) and deletion (pop) take place at the same end, called the top. A queue follows FIFO (First In, First Out): the element inserted first is removed first. Insertion (enqueue) takes place at the rear and deletion (dequeue) at the front. Applications: a stack is used for function calls/recursion, undo in editors and expression evaluation; a queue is used for printer spooling, CPU scheduling and breadth-first search.",
+      "key_points": [
+        {"text": "A stack follows LIFO (Last In, First Out): the element inserted last is removed first.", "weight": 1.5, "keywords": ["LIFO", "last in first out"]},
+        {"text": "A queue follows FIFO (First In, First Out): the element inserted first is removed first.", "weight": 1.5, "keywords": ["FIFO", "first in first out"]},
+        {"text": "In a stack, insertion and deletion (push/pop) happen at the same end (top); in a queue, insertion (enqueue) is at the rear and deletion (dequeue) at the front.", "weight": 1, "keywords": []},
+        {"text": "Gives a valid application of each, e.g. stack: function calls/recursion, undo, expression evaluation, browser back button; queue: printer spooling, CPU/task scheduling, BFS, ticket counter.", "weight": 1, "keywords": []}
+      ]
+    },
+    {
+      "id": "q06_eco_demand_supply",
+      "domain": "economics",
+      "type": "long",
+      "max_marks": 4,
+      "prompt": "State the law of demand and the law of supply. How is the equilibrium price determined in a market?",
+      "model_answer": "Law of demand: other things remaining constant, when the price of a good rises its quantity demanded falls, and when the price falls quantity demanded rises - an inverse relationship, so the demand curve slopes downward. Law of supply: other things remaining constant, when the price rises the quantity supplied rises, and when the price falls it falls - a direct relationship, so the supply curve slopes upward. The equilibrium price is the price at which quantity demanded equals quantity supplied, i.e. where the demand and supply curves intersect.",
+      "key_points": [
+        {"text": "Law of demand: other things remaining constant, when price rises the quantity demanded falls (and vice versa) - an inverse relationship; the demand curve slopes downward.", "weight": 1.5, "keywords": []},
+        {"text": "Law of supply: other things remaining constant, when price rises the quantity supplied rises (and vice versa) - a direct relationship; the supply curve slopes upward.", "weight": 1.5, "keywords": []},
+        {"text": "Equilibrium price is the price at which quantity demanded equals quantity supplied, i.e. where the demand and supply curves intersect.", "weight": 1, "keywords": []}
+      ]
+    },
+    {
+      "id": "q07_bio_mitosis_meiosis",
+      "domain": "biology",
+      "type": "long",
+      "max_marks": 5,
+      "prompt": "Compare mitosis and meiosis with respect to the number of divisions and daughter cells, the chromosome number and genetic make-up of the daughter cells, and where they occur in the body.",
+      "model_answer": "Mitosis involves one division and produces two daughter cells, while meiosis involves two successive divisions (meiosis I and II) and produces four daughter cells. Daughter cells of mitosis are diploid (2n), having the same chromosome number as the parent, and are genetically identical to it. Daughter cells of meiosis are haploid (n), having half the chromosome number, and are genetically different because of crossing over and independent assortment. Mitosis occurs in somatic (body) cells for growth and repair, while meiosis occurs in germ cells of the reproductive organs to form gametes.",
+      "key_points": [
+        {"text": "Mitosis has one division producing two daughter cells; meiosis has two divisions producing four daughter cells.", "weight": 1, "keywords": []},
+        {"text": "Mitotic daughter cells are diploid (same chromosome number as the parent) and genetically identical to it.", "weight": 1.5, "keywords": ["diploid", "2n", "identical"]},
+        {"text": "Meiotic daughter cells are haploid (half the chromosome number) and genetically different (due to crossing over / independent assortment).", "weight": 1.5, "keywords": ["haploid", "half"]},
+        {"text": "Mitosis occurs in somatic (body) cells for growth and repair; meiosis occurs in germ cells of reproductive organs to form gametes.", "weight": 1, "keywords": []}
+      ]
+    },
+    {
+      "id": "q08_phy_ohms_law",
+      "domain": "physics",
+      "type": "long",
+      "max_marks": 4,
+      "prompt": "State Ohm's law. A resistor of 8 Ω is connected across a 24 V battery. Calculate the current through the resistor and the power dissipated in it.",
+      "model_answer": "Ohm's law: the current flowing through a conductor is directly proportional to the potential difference across its ends, i.e. V = IR, provided the temperature and other physical conditions remain constant. Current I = V/R = 24 V / 8 Ω = 3 A. Power P = VI = 24 V × 3 A = 72 W (also I²R = 9 × 8 = 72 W).",
+      "key_points": [
+        {"text": "Ohm's law: the current through a conductor is directly proportional to the potential difference across it (V = IR).", "weight": 1.5, "keywords": ["proportional", "V = IR"]},
+        {"text": "The law holds provided temperature and other physical conditions remain constant.", "weight": 0.5, "keywords": ["temperature"]},
+        {"text": "Current I = V/R = 24 V / 8 Ω = 3 A.", "weight": 1, "keywords": []},
+        {"text": "Power P = VI (or I²R or V²/R) = 72 W.", "weight": 1, "keywords": []}
+      ]
+    },
+    {
+      "id": "q09_ml_supervised_unsupervised",
+      "domain": "machine learning",
+      "type": "paragraph",
+      "max_marks": 6,
+      "prompt": "Explain supervised and unsupervised learning. For each, state the type of problems it solves and give one algorithm with a suitable application.",
+      "model_answer": "In supervised learning the model is trained on labelled data, i.e. each input comes with the correct output, and it learns a mapping from inputs to outputs so that it can predict the output for new inputs. It solves classification (discrete labels) and regression (continuous values) problems. Example: linear regression for predicting house prices, or a decision tree/SVM for classifying emails as spam or not spam. In unsupervised learning the data is unlabelled; the algorithm finds hidden patterns or structure on its own, such as groups or reduced dimensions. It solves clustering, association and dimensionality-reduction problems. Example: k-means clustering for customer segmentation, or PCA for reducing the number of features.",
+      "key_points": [
+        {"text": "Supervised learning trains on labelled data (inputs paired with known outputs) and learns a mapping to predict outputs for new inputs.", "weight": 1.5, "keywords": ["labelled", "labeled"]},
+        {"text": "Unsupervised learning works on unlabelled data and discovers hidden patterns or structure (groups, associations) on its own.", "weight": 1.5, "keywords": ["unlabelled", "unlabeled", "without labels", "no labels"]},
+        {"text": "Problem types: supervised - classification and regression; unsupervised - clustering, association or dimensionality reduction.", "weight": 1, "keywords": ["classification", "regression", "clustering"]},
+        {"text": "A valid supervised algorithm with a suitable application (e.g. linear regression for house prices; decision tree/SVM/logistic regression for spam detection).", "weight": 1, "keywords": []},
+        {"text": "A valid unsupervised algorithm with a suitable application (e.g. k-means for customer segmentation; PCA for feature reduction; Apriori for market-basket analysis).", "weight": 1, "keywords": []}
+      ]
+    },
+    {
+      "id": "q10_env_greenhouse_effect",
+      "domain": "environmental science",
+      "type": "paragraph",
+      "max_marks": 8,
+      "prompt": "What is the greenhouse effect? Explain how it works, why the natural greenhouse effect is important for life on Earth, and the consequences of its enhancement by human activities.",
+      "model_answer": "The Sun's short-wave radiation passes through the atmosphere and warms the Earth's surface, which then emits long-wave infrared (heat) radiation. Greenhouse gases such as carbon dioxide, methane, water vapour, nitrous oxide and CFCs absorb this infrared radiation and re-radiate it, trapping heat in the lower atmosphere, much like the glass of a greenhouse. This natural greenhouse effect is essential for life: without it the Earth's average temperature would be about -18 °C instead of about 15 °C. Human activities such as burning fossil fuels, deforestation and intensive agriculture have increased the concentration of these gases, causing an enhanced greenhouse effect and global warming. Consequences include rising global temperatures, melting of glaciers and polar ice, sea-level rise, more frequent extreme weather such as heatwaves, floods and droughts, and harmful effects on agriculture and biodiversity.",
+      "key_points": [
+        {"text": "Short-wave solar radiation passes through the atmosphere and warms the Earth's surface, which re-emits energy as long-wave infrared (heat) radiation.", "weight": 1.5, "keywords": []},
+        {"text": "Greenhouse gases (CO2, methane, water vapour, nitrous oxide, CFCs) absorb and re-radiate this outgoing infrared radiation, trapping heat in the lower atmosphere.", "weight": 2, "keywords": ["carbon dioxide", "CO2", "methane", "greenhouse gas"]},
+        {"text": "The natural greenhouse effect is essential for life: it keeps Earth's average temperature at about 15 °C, which would otherwise be about -18 °C.", "weight": 1, "keywords": []},
+        {"text": "Human activities (burning fossil fuels, deforestation, agriculture, industry) raise greenhouse-gas concentrations, causing an enhanced greenhouse effect / global warming.", "weight": 1.5, "keywords": []},
+        {"text": "Consequences of the enhanced effect: rising global temperature, melting glaciers/ice caps and sea-level rise, extreme weather (heatwaves, floods, droughts), harm to agriculture and biodiversity.", "weight": 2, "keywords": []}
+      ]
+    }
+  ],
+  "answers": [
+    {
+      "id": "d001",
+      "question_id": "q01_ml_overfitting",
+      "category": "correct_verbatim",
+      "text": "Overfitting happens when a model learns the training data too closely, memorising the noise and random fluctuations instead of the real pattern. So it gives very high accuracy on the training set but performs poorly on new unseen test data, i.e. it fails to generalise. It can be reduced by regularisation, dropout, early stopping or by using more training data.",
+      "expected_kp": ["matched", "matched", "matched"],
+      "expected_marks": 2,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Follows the model answer almost word for word and covers memorising training noise, poor generalisation and valid remedies."
+    },
+    {
+      "id": "d002",
+      "question_id": "q05_cs_stack_queue",
+      "category": "correct_verbatim",
+      "text": "A stack is a linear data structure which follows LIFO (Last In First Out) principle, the element inserted last is removed first. Push and pop operations are done at the same end called top. A queue follows FIFO (First In First Out), the element inserted first is removed first. Insertion (enqueue) is done at rear end and deletion (dequeue) is done at front end. Application of stack: function calls and undo operation in text editor. Application of queue: printer spooling and CPU scheduling.",
+      "expected_kp": ["matched", "matched", "matched", "matched"],
+      "expected_marks": 5,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Textbook answer covering LIFO, FIFO, the ends used for insertion/deletion and an application of each."
+    },
+    {
+      "id": "d003",
+      "question_id": "q10_env_greenhouse_effect",
+      "category": "correct_verbatim",
+      "text": "The greenhouse effect is the natural process by which the atmosphere keeps the Earth warm. Sun's short wave radiation passes through the atmosphere and heats the earth surface. The earth then emits long wave infrared radiation (heat). Greenhouse gases like carbon dioxide, methane, water vapour, nitrous oxide and CFCs absorb this infrared radiation and re-radiate it back, so heat is trapped in the lower atmosphere just like the glass of a greenhouse. This natural greenhouse effect is very important for life because without it the average temperature of earth would be about -18°C instead of about 15°C. But human activities such as burning of fossil fuels, deforestation and agriculture have increased the amount of these gases, causing enhanced greenhouse effect and global warming. Its consequences are rise in global temperature, melting of glaciers and polar ice, rise in sea level, more extreme weather events like heatwaves, floods and droughts and bad effect on agriculture and biodiversity.",
+      "expected_kp": ["matched", "matched", "matched", "matched", "matched"],
+      "expected_marks": 8,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Complete answer mirroring the model answer: mechanism, gases, -18/15 °C importance, human causes and several consequences."
+    },
+    {
+      "id": "d004",
+      "question_id": "q02_bio_arteries_veins",
+      "category": "correct_paraphrase",
+      "text": "Blood leaving the heart for the rest of the body travels in arteries, but the blood returning to the heart from the organs comes through veins. The walls of arteries are thick, muscular and stretchy because blood rushes through them under high pressure; vein walls are comparatively thin and floppy. Veins also contain small flaps, called valves, so blood cannot flow backwards, which is not seen in arteries.",
+      "expected_kp": ["matched", "matched", "matched"],
+      "expected_marks": 3,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "All three differences are stated correctly in the student's own words (leaving/returning, thick vs thin walls, flaps that stop backward flow)."
+    },
+    {
+      "id": "d005",
+      "question_id": "q04_chem_redox",
+      "category": "correct_paraphrase",
+      "text": "When a species gives away electrons during a reaction we say it is oxidised, and its oxidation state goes up. On the other hand when a species accepts electrons it gets reduced and its oxidation state comes down. Easy way to remember is OIL RIG.",
+      "expected_kp": ["matched", "matched"],
+      "expected_marks": 2,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Giving away electrons = oxidation and accepting electrons = reduction, both correct with oxidation-state change."
+    },
+    {
+      "id": "d006",
+      "question_id": "q09_ml_supervised_unsupervised",
+      "category": "correct_paraphrase",
+      "text": "Supervised learning: here the algorithm is given examples where the right answer is already attached to each input (labelled data), like a teacher guiding a student. From these examples it figures out a function that maps input to output and then uses it to predict answers for fresh inputs. It is used for classification, where the output is a category, and regression, where the output is a number. Example - a logistic regression model can tell whether an email is spam or not. Unsupervised learning: here no answers are given, the data is unlabelled, and the algorithm has to discover hidden groupings or structure by itself. Typical jobs are clustering and dimensionality reduction. Example - k-means can group the customers of a shopping mall into segments based on their buying habits.",
+      "expected_kp": ["matched", "matched", "matched", "matched", "matched"],
+      "expected_marks": 6,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Rephrased but complete: labelled vs unlabelled, task types on both sides, and a valid algorithm-plus-application for each."
+    },
+    {
+      "id": "d007",
+      "question_id": "q06_eco_demand_supply",
+      "category": "correct_paraphrase",
+      "text": "If a commodity becomes costlier, buyers purchase less of it, and when it becomes cheaper they purchase more, assuming income, tastes and other factors stay the same. So price and the amount people want to buy move in opposite directions and the demand curve slopes down. Sellers behave in the reverse way - a higher price encourages them to offer more units for sale and a lower price makes them offer less, so the supply curve slopes upward. The market settles at the price where the amount buyers want is exactly the amount sellers are willing to offer, that is where the two curves cut each other. This is the equilibrium price.",
+      "expected_kp": ["matched", "matched", "matched"],
+      "expected_marks": 4,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Inverse demand relation, direct supply relation and the demand-equals-supply equilibrium are all expressed without the textbook wording."
+    },
+    {
+      "id": "d008",
+      "question_id": "q07_bio_mitosis_meiosis",
+      "category": "partial",
+      "text": "Mitosis gives 2 daughter cells and meiosis gives 4 daughter cells. In mitosis the cells formed are identical to the parent cell. In meiosis the chromosome number becomes half. Mitosis takes place in body cells.",
+      "expected_kp": ["partial", "partial", "partial", "partial"],
+      "expected_marks": 2.5,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Each point is half done: cell counts without number of divisions, identical but not diploid, halved but not genetically different, and only mitosis location given."
+    },
+    {
+      "id": "d009",
+      "question_id": "q08_phy_ohms_law",
+      "category": "partial",
+      "text": "Ohm's law says V = IR where V is voltage, I is current and R is resistance. I = V/R = 24/8 = 3 A.",
+      "expected_kp": ["partial", "missed", "matched", "missed"],
+      "expected_marks": 1.75,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Law given only as the formula V = IR without the proportionality statement, no constant-temperature condition, current correct, power not attempted."
+    },
+    {
+      "id": "d010",
+      "question_id": "q01_ml_overfitting",
+      "category": "partial",
+      "text": "Overfitting means the model has learnt the training data too much so it is not good. We can avoid it by using more data.",
+      "expected_kp": ["matched", "partial", "matched"],
+      "expected_marks": 1.5,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Learning the training data too much and the remedy are fine, but 'it is not good' only vaguely hints at poor performance on unseen data."
+    },
+    {
+      "id": "d011",
+      "question_id": "q10_env_greenhouse_effect",
+      "category": "partial",
+      "text": "Greenhouse effect is the warming of earth due to gases like CO2 in the atmosphere which trap heat. Because of this the earth is warm. Due to pollution from factories and vehicles the amount of CO2 is increasing and global warming happens. Due to global warming ice is melting.",
+      "expected_kp": ["missed", "partial", "partial", "matched", "partial"],
+      "expected_marks": 4,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "No radiation mechanism, gases only said to 'trap heat', warmth not linked to life, human cause fine, and only one consequence (melting ice)."
+    },
+    {
+      "id": "d012",
+      "question_id": "q02_bio_arteries_veins",
+      "category": "incorrect",
+      "text": "Arteries and veins are both blood vessels. Arteries are found deep inside the body and veins are found near the skin so we can see them in our hands. Arteries are red and veins are blue in colour.",
+      "expected_kp": ["missed", "missed", "missed"],
+      "expected_marks": 0,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "On-topic but answers none of the asked bases (flow direction, walls, valves) and relies on the blue-vein misconception."
+    },
+    {
+      "id": "d013",
+      "question_id": "q06_eco_demand_supply",
+      "category": "incorrect",
+      "text": "Law of demand states that demand is created by the producers through advertisement. Law of supply means the government supplies goods at fixed price through ration shops. Equilibrium price is the price fixed by the government.",
+      "expected_kp": ["missed", "missed", "missed"],
+      "expected_marks": 0,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Misunderstands all three ideas; no price-quantity relationship or demand-equals-supply condition is stated."
+    },
+    {
+      "id": "d014",
+      "question_id": "q02_bio_arteries_veins",
+      "category": "contradiction_flipped_fact",
+      "text": "Arteries carry blood away from the heart and veins carry blood towards the heart. Veins have thicker and more muscular walls than arteries because they have to push the blood back to heart. Veins have valves to stop backflow of blood.",
+      "expected_kp": ["matched", "contradicted", "matched"],
+      "expected_marks": 2,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "Direction and valves are right, but the wall thickness is flipped (claims veins are thicker)."
+    },
+    {
+      "id": "d015",
+      "question_id": "q06_eco_demand_supply",
+      "category": "contradiction_flipped_fact",
+      "text": "Law of demand: other things being equal, when price of a good increases its quantity demanded also increases, so there is a direct relationship. Law of supply: when price increases the quantity supplied also increases. Equilibrium price is fixed where demand is equal to supply, that is where both curves intersect.",
+      "expected_kp": ["contradicted", "matched", "matched"],
+      "expected_marks": 2.5,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "States a direct relationship for demand, the opposite of the law of demand; supply and equilibrium are correct."
+    },
+    {
+      "id": "d016",
+      "question_id": "q08_phy_ohms_law",
+      "category": "contradiction_flipped_fact",
+      "text": "Ohm's law states that the current flowing through a conductor is inversely proportional to the potential difference across it, provided temperature remains constant. V = IR. Current I = V/R = 24/8 = 3 A. Power P = VI = 24 x 3 = 72 W.",
+      "expected_kp": ["contradicted", "matched", "matched", "matched"],
+      "expected_marks": 2.5,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "The verbal statement says 'inversely proportional', contradicting Ohm's law, although the condition and both calculations are correct."
+    },
+    {
+      "id": "d017",
+      "question_id": "q01_ml_overfitting",
+      "category": "contradiction_negation",
+      "text": "Overfitting is when the model memorises the training data including noise. Such a model does not perform badly on unseen data, it only becomes slow. It can be reduced using dropout.",
+      "expected_kp": ["matched", "contradicted", "matched"],
+      "expected_marks": 1,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "Explicitly denies the poor performance on unseen data that defines overfitting; memorisation and dropout are correct."
+    },
+    {
+      "id": "d018",
+      "question_id": "q07_bio_mitosis_meiosis",
+      "category": "contradiction_negation",
+      "text": "Mitosis has one division and forms two daughter cells, whereas meiosis has two divisions and forms four daughter cells. Daughter cells of mitosis are diploid and genetically identical to the parent. Daughter cells of meiosis are haploid, but they are not genetically different from each other because no crossing over takes place. Mitosis occurs in somatic cells and meiosis in germ cells for forming gametes.",
+      "expected_kp": ["matched", "matched", "contradicted", "matched"],
+      "expected_marks": 3.5,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "Negates the genetic variation of meiotic products and denies crossing over, so the meiosis key point is contradicted despite 'haploid'."
+    },
+    {
+      "id": "d019",
+      "question_id": "q04_chem_redox",
+      "category": "role_swap",
+      "text": "Oxidation is the gain of electrons and reduction is the loss of electrons. In oxidation the oxidation number decreases and in reduction it increases.",
+      "expected_kp": ["contradicted", "contradicted"],
+      "expected_marks": 0,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "Oxidation and reduction definitions are swapped, including the oxidation-number direction."
+    },
+    {
+      "id": "d020",
+      "question_id": "q05_cs_stack_queue",
+      "category": "role_swap",
+      "text": "Stack follows FIFO principle i.e. first in first out, and queue follows LIFO principle i.e. last in first out. In stack push and pop happen at one end called top, in queue insertion is at rear and deletion at front. Stack is used in recursion and queue is used in printer spooling.",
+      "expected_kp": ["contradicted", "contradicted", "matched", "matched"],
+      "expected_marks": 2,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "LIFO and FIFO are attributed to the wrong structures, while the ends and applications are correct."
+    },
+    {
+      "id": "d021",
+      "question_id": "q09_ml_supervised_unsupervised",
+      "category": "role_swap",
+      "text": "Unsupervised learning uses labelled data, where each input has a correct output given, and the model learns to predict output. Supervised learning works on unlabelled data and finds hidden patterns by itself. Example of supervised learning is k-means clustering for customer segmentation and example of unsupervised learning is linear regression for house price prediction.",
+      "expected_kp": ["contradicted", "contradicted", "contradicted", "contradicted", "contradicted"],
+      "expected_marks": 0,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "Every property and example of supervised learning is assigned to unsupervised learning and vice versa."
+    },
+    {
+      "id": "d022",
+      "question_id": "q08_phy_ohms_law",
+      "category": "wrong_concept",
+      "text": "Ohm's law: The resistance of a wire is directly proportional to its length and inversely proportional to its area of cross section, R = ρl/A, where ρ is the resistivity of the material. So, R = 8 ohm.",
+      "expected_kp": ["missed", "missed", "missed", "missed"],
+      "expected_marks": 0,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "Describes the laws of resistance (R = ρl/A) instead of Ohm's law and does not attempt the current or power."
+    },
+    {
+      "id": "d023",
+      "question_id": "q04_chem_redox",
+      "category": "wrong_concept",
+      "text": "Oxidation is the process in which a substance reacts with acid and forms salt and water, and reduction is when a base is neutralised. Example: HCl + NaOH → NaCl + H2O.",
+      "expected_kp": ["missed", "missed"],
+      "expected_marks": 0,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "Describes acid-base neutralisation, a different concept, with no mention of electron transfer."
+    },
+    {
+      "id": "d024",
+      "question_id": "q05_cs_stack_queue",
+      "category": "missing_key_concepts",
+      "text": "Stack works on LIFO principle, the last element inserted is the first to be deleted. Queue works on FIFO principle where the first inserted element is deleted first.",
+      "expected_kp": ["matched", "matched", "missed", "missed"],
+      "expected_marks": 3,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Correct LIFO and FIFO explanations, but nothing about the ends used for insertion/deletion and no applications."
+    },
+    {
+      "id": "d025",
+      "question_id": "q10_env_greenhouse_effect",
+      "category": "missing_key_concepts",
+      "text": "Greenhouse gases like carbon dioxide, methane and water vapour absorb heat and radiate part of it back towards the ground, so the heat gets trapped in the lower atmosphere. Due to burning of fossil fuels and cutting of forests these gases are increasing in the atmosphere which is the main reason of global warming.",
+      "expected_kp": ["missed", "matched", "missed", "matched", "missed"],
+      "expected_marks": 3.5,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Gas absorption/re-radiation and the human cause are correct; solar/infrared mechanism, importance for life and consequences are absent."
+    },
+    {
+      "id": "d026",
+      "question_id": "q03_phy_newton_second_law",
+      "category": "missing_key_concepts",
+      "text": "Newton's second law of motion states that the rate of change of momentum of a body is directly proportional to the applied force and takes place in the direction in which the force acts.",
+      "expected_kp": ["matched", "missed", "missed"],
+      "expected_marks": 1,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Perfect statement of the law, but F = ma and the numerical part are not attempted."
+    },
+    {
+      "id": "d027",
+      "question_id": "q09_ml_supervised_unsupervised",
+      "category": "keyword_stuffing",
+      "text": "Supervised learning labelled data unlabelled data unsupervised clustering classification regression k-means SVM decision tree PCA spam detection customer segmentation patterns training testing accuracy machine learning AI.",
+      "expected_kp": ["missed", "missed", "missed", "missed", "missed"],
+      "expected_marks": 0,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "A list of buzzwords with no sentence linking any term to supervised or unsupervised learning, so no key point is actually stated."
+    },
+    {
+      "id": "d028",
+      "question_id": "q07_bio_mitosis_meiosis",
+      "category": "keyword_stuffing",
+      "text": "Mitosis meiosis diploid haploid 2n n identical different crossing over somatic cells germ cells gametes four cells two cells division prophase metaphase anaphase telophase cytokinesis.",
+      "expected_kp": ["missed", "missed", "missed", "missed"],
+      "expected_marks": 0,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Word list that never says which property belongs to mitosis and which to meiosis, so no comparison is made."
+    },
+    {
+      "id": "d029",
+      "question_id": "q06_eco_demand_supply",
+      "category": "copied_question",
+      "text": "State the law of demand and the law of supply. How is the equilibrium price determined in a market? The law of demand and law of supply are important laws in economics and equilibrium price is determined in the market.",
+      "expected_kp": ["missed", "missed", "missed"],
+      "expected_marks": 0,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "Copies the question and restates it without giving either law or the equilibrium condition."
+    },
+    {
+      "id": "d030",
+      "question_id": "q03_phy_newton_second_law",
+      "category": "copied_question",
+      "text": "Newton's second law of motion: we have to calculate the force required to give a body of mass 5 kg an acceleration of 2 m/s².",
+      "expected_kp": ["missed", "missed", "missed"],
+      "expected_marks": 0,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "Only rewrites the question; no statement, formula or calculation."
+    },
+    {
+      "id": "d031",
+      "question_id": "q01_ml_overfitting",
+      "category": "off_topic",
+      "text": "Machine learning is a branch of artificial intelligence and the term was coined by Arthur Samuel in 1959. Today it is used in many fields like healthcare, banking, self-driving cars and recommendation systems on Netflix and Amazon. Python is the most popular language for machine learning because of libraries like NumPy, pandas and scikit-learn.",
+      "expected_kp": ["missed", "missed", "missed"],
+      "expected_marks": 0,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "General essay about machine learning that never addresses overfitting."
+    },
+    {
+      "id": "d032",
+      "question_id": "q10_env_greenhouse_effect",
+      "category": "off_topic",
+      "text": "Our college organised a tree plantation drive on World Environment Day. More than 200 saplings were planted by NSS volunteers. Trees give us oxygen, fruits and shade and we should all plant more trees.",
+      "expected_kp": ["missed", "missed", "missed", "missed", "missed"],
+      "expected_marks": 0,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "Describes a college event; nothing about how the greenhouse effect works or its consequences."
+    },
+    {
+      "id": "d033",
+      "question_id": "q04_chem_redox",
+      "category": "empty_or_trivial",
+      "text": "",
+      "expected_kp": ["missed", "missed"],
+      "expected_marks": 0,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Blank answer."
+    },
+    {
+      "id": "d034",
+      "question_id": "q09_ml_supervised_unsupervised",
+      "category": "empty_or_trivial",
+      "text": "Don't know.",
+      "expected_kp": ["missed", "missed", "missed", "missed", "missed"],
+      "expected_marks": 0,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Student states they do not know the answer."
+    },
+    {
+      "id": "d035",
+      "question_id": "q02_bio_arteries_veins",
+      "category": "ocr_noise",
+      "text": "Arteries carry b1ood away frorn the heart to the body and veins carry b1ood back towards the heart. Arteries have thick rnuscular and e1astic wa11s whi1e veins have thin wa11s. Veins have va1ves to prevent backf1ow of b1ood, arteries do not have va1ves.",
+      "expected_kp": ["matched", "matched", "matched"],
+      "expected_marks": 3,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Correct answer with l->1 and m->rn OCR errors; meaning is fully recoverable."
+    },
+    {
+      "id": "d036",
+      "question_id": "q06_eco_demand_supply",
+      "category": "ocr_noise",
+      "text": "Law of dernand: other things rernaining constant, when price of a cornmodity rises the quantity dernanded fa11s and when price fa11s quantity dernanded rises. It is an inverse re1ationship. Law of supp1y: when price rises quantity supp1ied a1so rises, direct re1ationship. Equi1ibriurn price is deterrnined where quantity dernanded is equa1 to quantity supp1ied i.e. where dernand and supp1y curves intersect.",
+      "expected_kp": ["matched", "matched", "matched"],
+      "expected_marks": 4,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Complete and correct answer with heavy but readable OCR substitutions (m->rn, l->1)."
+    },
+    {
+      "id": "d037",
+      "question_id": "q08_phy_ohms_law",
+      "category": "ocr_noise",
+      "text": "0hm's 1aw states that the current f1owing through a conductor is direct1y proportiona1 to the potentia1 difference across its ends (V = lR). Current I = V/R = 24/8 = 3 A. Power P = V x I = 24 x 3 = W",
+      "expected_kp": ["matched", "missed", "matched", "partial"],
+      "expected_marks": 3,
+      "expected_flag": true,
+      "ambiguous": true,
+      "rationale": "Law and current are readable, no temperature condition, and the OCR dropped the final power value, so only the method is visible and a teacher should check the script."
+    },
+    {
+      "id": "d038",
+      "question_id": "q03_phy_newton_second_law",
+      "category": "numeric_mismatch",
+      "text": "Newton's second law states that the rate of change of momentum of a body is directly proportional to the force applied on it and is in the direction of force. So F = ma. Given m = 5 kg, a = 2 m/s². F = m/a = 5/2 = 2.5 N.",
+      "expected_kp": ["matched", "matched", "contradicted"],
+      "expected_marks": 1.5,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "Statement and formula are right but the calculation divides instead of multiplying, giving 2.5 N instead of 10 N."
+    },
+    {
+      "id": "d039",
+      "question_id": "q08_phy_ohms_law",
+      "category": "numeric_mismatch",
+      "text": "Ohm's law states that at constant temperature the current through a conductor is directly proportional to the potential difference across it, V = IR. Current I = V/R = 24/8 = 3 A. Power P = I²R = 3² × 8 = 24 W.",
+      "expected_kp": ["matched", "matched", "matched", "contradicted"],
+      "expected_marks": 3,
+      "expected_flag": true,
+      "ambiguous": false,
+      "rationale": "Everything correct except the power, which is wrongly computed as 24 W instead of 72 W."
+    },
+    {
+      "id": "d040",
+      "question_id": "q03_phy_newton_second_law",
+      "category": "extra_incorrect_statement",
+      "text": "Newton's second law, also known as the law of inertia, states that the rate of change of momentum of a body is directly proportional to the applied force and takes place in the direction of the force. From this we get F = ma. F = 5 × 2 = 10 N.",
+      "expected_kp": ["matched", "matched", "matched"],
+      "expected_marks": 3,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Fully correct; the extra claim that it is the 'law of inertia' (that is the first law) is wrong but does not contradict any key point, so it is not penalised."
+    },
+    {
+      "id": "d041",
+      "question_id": "q04_chem_redox",
+      "category": "extra_incorrect_statement",
+      "text": "Oxidation is loss of electrons and reduction is gain of electrons. Both always happen together in a redox reaction. Rusting of iron is an example of reduction.",
+      "expected_kp": ["matched", "matched"],
+      "expected_marks": 2,
+      "expected_flag": false,
+      "ambiguous": false,
+      "rationale": "Both definitions are correct; the wrong extra example (rusting is oxidation) does not contradict either definition."
+    },
+    {
+      "id": "d042",
+      "question_id": "q02_bio_arteries_veins",
+      "category": "missing_key_concepts",
+      "text": "Arteries carry pure (oxygenated) blood and veins carry impure (deoxygenated) blood. Arteries have thick walls and veins have thin walls.",
+      "expected_kp": ["missed", "matched", "missed"],
+      "expected_marks": 1,
+      "expected_flag": true,
+      "ambiguous": true,
+      "rationale": "Wall difference is right and valves are absent; the asked direction of flow is replaced by oxygenated/deoxygenated blood (also wrong for pulmonary vessels), which some teachers might give half credit for."
+    }
+  ]
+}

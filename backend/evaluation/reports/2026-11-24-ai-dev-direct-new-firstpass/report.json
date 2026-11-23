@@ -1,0 +1,301 @@
+{
+  "label": "dev, question-only, AFTER (first pass, from cache)",
+  "engine": "direct-v2-scheme",
+  "engine_root": "C:\\Users\\Lenovo\\Desktop\\SARAS.AI\\backend\\app",
+  "mode": "direct",
+  "data": "evaluation\\data\\grading_benchmark_dev.json",
+  "providers": [
+    "groq:openai/gpt-oss-120b"
+  ],
+  "style": "moderate",
+  "sheet_size": 4,
+  "n_sheets": 11,
+  "overall": {
+    "n": 42,
+    "n_scored": 41,
+    "n_unmarked": 1,
+    "mae": 0.616,
+    "exact": 0.537,
+    "within_0.5": 0.683,
+    "within_1": 0.805,
+    "mean_signed_error": 0.079,
+    "mae_normalised": 0.133,
+    "mae_unambiguous": 0.609
+  },
+  "by_category": {
+    "contradiction_flipped_fact": {
+      "n": 3,
+      "n_scored": 3,
+      "n_unmarked": 0,
+      "mae": 0.333,
+      "exact": 0.333,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.333,
+      "mae_normalised": 0.083,
+      "mae_unambiguous": 0.333
+    },
+    "contradiction_negation": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 1.0,
+      "exact": 0.0,
+      "within_0.5": 0.5,
+      "within_1": 0.5,
+      "mean_signed_error": -0.5,
+      "mae_normalised": 0.275,
+      "mae_unambiguous": 1.0
+    },
+    "copied_question": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "correct_paraphrase": {
+      "n": 4,
+      "n_scored": 4,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "correct_verbatim": {
+      "n": 3,
+      "n_scored": 3,
+      "n_unmarked": 0,
+      "mae": 0.667,
+      "exact": 0.667,
+      "within_0.5": 0.667,
+      "within_1": 0.667,
+      "mean_signed_error": -0.667,
+      "mae_normalised": 0.133,
+      "mae_unambiguous": 0.667
+    },
+    "empty_or_trivial": {
+      "n": 2,
+      "n_scored": 1,
+      "n_unmarked": 1,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "extra_incorrect_statement": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.75,
+      "exact": 0.5,
+      "within_0.5": 0.5,
+      "within_1": 0.5,
+      "mean_signed_error": -0.75,
+      "mae_normalised": 0.25,
+      "mae_unambiguous": 0.75
+    },
+    "incorrect": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "keyword_stuffing": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 3.75,
+      "exact": 0.0,
+      "within_0.5": 0.0,
+      "within_1": 0.0,
+      "mean_signed_error": 3.75,
+      "mae_normalised": 0.7,
+      "mae_unambiguous": 3.75
+    },
+    "missing_key_concepts": {
+      "n": 4,
+      "n_scored": 4,
+      "n_unmarked": 0,
+      "mae": 0.375,
+      "exact": 0.5,
+      "within_0.5": 0.75,
+      "within_1": 1.0,
+      "mean_signed_error": -0.125,
+      "mae_normalised": 0.066,
+      "mae_unambiguous": 0.5
+    },
+    "numeric_mismatch": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.5,
+      "exact": 0.5,
+      "within_0.5": 0.5,
+      "within_1": 1.0,
+      "mean_signed_error": -0.5,
+      "mae_normalised": 0.125,
+      "mae_unambiguous": 0.5
+    },
+    "ocr_noise": {
+      "n": 3,
+      "n_scored": 3,
+      "n_unmarked": 0,
+      "mae": 0.833,
+      "exact": 0.333,
+      "within_0.5": 0.333,
+      "within_1": 0.667,
+      "mean_signed_error": -0.833,
+      "mae_normalised": 0.208,
+      "mae_unambiguous": 0.5
+    },
+    "off_topic": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    },
+    "partial": {
+      "n": 4,
+      "n_scored": 4,
+      "n_unmarked": 0,
+      "mae": 1.062,
+      "exact": 0.0,
+      "within_0.5": 0.5,
+      "within_1": 0.5,
+      "mean_signed_error": 0.312,
+      "mae_normalised": 0.216,
+      "mae_unambiguous": 1.062
+    },
+    "role_swap": {
+      "n": 3,
+      "n_scored": 3,
+      "n_unmarked": 0,
+      "mae": 0.667,
+      "exact": 0.333,
+      "within_0.5": 0.333,
+      "within_1": 1.0,
+      "mean_signed_error": 0.667,
+      "mae_normalised": 0.122,
+      "mae_unambiguous": 0.667
+    },
+    "wrong_concept": {
+      "n": 2,
+      "n_scored": 2,
+      "n_unmarked": 0,
+      "mae": 0.0,
+      "exact": 1.0,
+      "within_0.5": 1.0,
+      "within_1": 1.0,
+      "mean_signed_error": 0.0,
+      "mae_normalised": 0.0,
+      "mae_unambiguous": 0.0
+    }
+  },
+  "latency_s": {
+    "wall_total": 1.56,
+    "mean_per_sheet": 0.14,
+    "p50_per_sheet": 0.07,
+    "max_per_sheet": 0.72
+  },
+  "requests": {
+    "sent": 39,
+    "ok": 25,
+    "cache_hits": 21,
+    "per_sheet": 3.55
+  },
+  "tokens": {
+    "input": 35340,
+    "output": 23043,
+    "per_sheet": 5308,
+    "per_answer": 1390
+  },
+  "cost_usd_list_price": {
+    "total": 0.01913,
+    "per_sheet": 0.001739,
+    "prices_per_1m": [
+      0.15,
+      0.6
+    ]
+  },
+  "verification": {
+    "answers_re_marked": 0,
+    "confirmed": 0,
+    "changed": 0,
+    "failed": 0
+  },
+  "usage_by_task": [
+    {
+      "status": "cache_hit",
+      "task": "grade_sheet",
+      "rows": 11,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "avg_latency_ms": 3
+    },
+    {
+      "status": "cache_hit",
+      "task": "marking_scheme",
+      "rows": 10,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "avg_latency_ms": 21
+    },
+    {
+      "status": "invalid",
+      "task": "grade_sheet",
+      "rows": 13,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "avg_latency_ms": 4123
+    },
+    {
+      "status": "ok",
+      "task": "grade_sheet",
+      "rows": 15,
+      "input_tokens": 30065,
+      "output_tokens": 19655,
+      "avg_latency_ms": 5125
+    },
+    {
+      "status": "ok",
+      "task": "marking_scheme",
+      "rows": 10,
+      "input_tokens": 5275,
+      "output_tokens": 3388,
+      "avg_latency_ms": 1216
+    },
+    {
+      "status": "rate_limited",
+      "task": "marking_scheme",
+      "rows": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "avg_latency_ms": 257
+    }
+  ]
+}
