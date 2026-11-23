@@ -1,0 +1,27 @@
+# Render Blueprint: one Docker web service (API + worker + built SPA) with a persistent disk.
+# Deploy: https://dashboard.render.com/blueprint/new?repo=https://github.com/Koushik-Biswas/SARAS.AI
+services:
+  - type: web
+    name: saras-ai
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter            # a persistent disk needs a paid plan; "free" works but loses data on restart
+    healthCheckPath: /health
+    autoDeploy: true
+    disk:
+      name: saras-data
+      mountPath: /data       # SQLite database, uploads, page images, model cache
+      sizeGB: 1
+    envVars:
+      - key: SARAS_ENV
+        value: prod
+      - key: SARAS_JWT_SECRET
+        generateValue: true
+      - key: FORWARDED_ALLOW_IPS
+        value: "*"
+      - key: SARAS_AI_GRADING
+        value: "off"         # set to "ensemble" + SARAS_AI_CONSENT=true + keys to enable AI marking
+      - key: SARAS_GROQ_API_KEY
+        sync: false          # asked for in the dashboard; leave empty to stay offline
+      - key: SARAS_GEMINI_API_KEY
+        sync: false
