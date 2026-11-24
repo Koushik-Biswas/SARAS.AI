@@ -6,6 +6,10 @@
 
 **AI-powered exam answer-sheet evaluation and marks assessment, with the teacher always in control.**
 
+### 🚀 [Live demo: saras-ai-488c.onrender.com](https://saras-ai-488c.onrender.com/login)
+
+<sub>Hosted on Render's free plan: the first visit after a quiet period takes about 50 seconds to wake up, and demo data is reset on restarts.</sub>
+
 [![CI](https://github.com/Koushik-Biswas/SARAS.AI/actions/workflows/ci.yml/badge.svg)](https://github.com/Koushik-Biswas/SARAS.AI/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.165-009688?logo=fastapi&logoColor=white)
@@ -14,6 +18,7 @@
 ![ONNX Runtime](https://img.shields.io/badge/ONNX_Runtime-CPU-005CED?logo=onnx&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Live demo](https://img.shields.io/badge/Live_demo-Render-46E3B7?logo=render&logoColor=white)](https://saras-ai-488c.onrender.com/login)
 
 [Overview](#-project-description--overview) ·
 [Features](#-key-features) ·
