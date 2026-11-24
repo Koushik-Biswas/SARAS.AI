@@ -10,6 +10,13 @@
 
 <sub>Hosted on Render's free plan: the first visit after a quiet period takes about 50 seconds to wake up, and demo data is reset on restarts.</sub>
 
+### 📄 Project documents (PDF)
+
+| Document | View | Download |
+|---|---|---|
+| **Project Synopsis** | [Open](docs/report/SARAS_AI_Project_Synopsis.pdf) | [⬇️ Download PDF](https://github.com/Koushik-Biswas/SARAS.AI/raw/main/docs/report/SARAS_AI_Project_Synopsis.pdf) |
+| **Project Progress Report** | [Open](docs/report/SARAS_AI_Project_Report.pdf) | [⬇️ Download PDF](https://github.com/Koushik-Biswas/SARAS.AI/raw/main/docs/report/SARAS_AI_Project_Report.pdf) |
+
 [![CI](https://github.com/Koushik-Biswas/SARAS.AI/actions/workflows/ci.yml/badge.svg)](https://github.com/Koushik-Biswas/SARAS.AI/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.165-009688?logo=fastapi&logoColor=white)

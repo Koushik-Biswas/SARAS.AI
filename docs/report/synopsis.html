@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SARAS AI – Project Synopsis</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm; }
+  body { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; color: #1b1f24; line-height: 1.5; }
+  .cover { text-align: center; padding-top: 70mm; }
+  .cover h1 { font-size: 28pt; color: #1d3b8b; margin: 0; }
+  .cover .tag { font-size: 13pt; color: #333; margin: 6px 0 24px; }
+  .cover .meta { font-size: 10.5pt; color: #555; }
+  h2 { font-size: 12.5pt; color: #fff; background: #1d3b8b; padding: 4px 8px; margin: 14px 0 6px; border-radius: 3px; }
+  h3 { font-size: 11pt; color: #1d3b8b; margin: 10px 0 3px; }
+  table { border-collapse: collapse; width: 100%; margin: 4px 0; }
+  td, th { border: 1px solid #c9d1e0; padding: 4px 7px; vertical-align: top; text-align: left; }
+  th { background: #eef2fa; }
+  ul, ol { margin: 4px 0 4px 18px; padding: 0; }
+  li { margin: 2px 0; }
+  .toc td { border: none; border-bottom: 1px dotted #aab; padding: 6px 4px; font-size: 11.5pt; }
+  .toc td:first-child { width: 40px; font-weight: 600; color: #1d3b8b; }
+  .pb { break-before: page; }
+  .refs li { font-size: 9.5pt; }
+  .flow { text-align: center; font-weight: 600; color: #1d3b8b; background: #eef2fa; padding: 6px; border-radius: 3px; font-size: 9.5pt; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>SARAS AI</h1>
+  <div class="tag">Smart Assessment and Recognition Automation System<br>
+  AI-Powered Exam Answer-Sheet Evaluation and Marks Assessment</div>
+  <div class="meta">Project Synopsis<br><br>
+  Live demo: https://saras-ai-488c.onrender.com<br>
+  Source code: https://github.com/Koushik-Biswas/SARAS.AI</div>
+</div>
+
+<div class="pb"></div>
+<h2>Table of Contents</h2>
+<table class="toc">
+  <tr><td>I.</td><td>Title of the Project</td></tr>
+  <tr><td>II.</td><td>Project Category</td></tr>
+  <tr><td>III.</td><td>Introduction &nbsp;(a. Why? &nbsp;b. Importance)</td></tr>
+  <tr><td>IV.</td><td>Objective</td></tr>
+  <tr><td>V.</td><td>Scope of the Project</td></tr>
+  <tr><td>VI.</td><td>Proposed Methodology</td></tr>
+  <tr><td>VII.</td><td>Tools &amp; Platforms Used</td></tr>
+  <tr><td>VIII.</td><td>Conclusion</td></tr>
+  <tr><td>IX.</td><td>Bibliography and References</td></tr>
+</table>
+
+<div class="pb"></div>
+<h2>I. Title of the Project</h2>
+<p><b>SARAS AI – Smart Assessment and Recognition Automation System: An AI-Powered Exam Answer-Sheet
+Evaluation and Marks Assessment System</b></p>
+
+<h2>II. Project Category</h2>
+<p><b>Artificial Intelligence / Machine Learning – Web Application (EdTech).</b> The project combines Computer
+Vision, Optical Character Recognition (OCR), Natural Language Processing (NLP) and Large Language Models with a
+full-stack web application (React frontend, FastAPI backend).</p>
+
+<h2>III. Introduction</h2>
+<p>SARAS AI is a web application that reads scanned exam answer sheets, splits them into answers, and gives
+explainable first-pass marks against a teacher's rubric. The teacher reviews, corrects and approves every result.</p>
+<h3>a. Why?</h3>
+<ul>
+  <li><b>Manual evaluation is slow</b> – teachers spend many hours reading repetitive multi-page scripts, delaying results.</li>
+  <li><b>Marking is inconsistent</b> – the same answer can receive different marks from different examiners or when the examiner is tired.</li>
+  <li><b>Students get little feedback</b> – a bare number does not show which points were covered or missed.</li>
+  <li><b>Existing tools do not fit</b> – OMR/MCQ systems cannot read written answers, and black-box AI graders give marks without evidence.</li>
+</ul>
+<h3>b. Importance</h3>
+<ul>
+  <li>Reduces evaluation time and lets teachers focus on difficult or borderline answers.</li>
+  <li>Applies the same rubric to every student, improving fairness and consistency.</li>
+  <li>Gives evidence-based feedback: each key point is shown as matched, partial, missed or contradicted.</li>
+  <li>Keeps humans in control with a review queue, overrides and an audit log, which is essential for real exams.</li>
+  <li>Runs on low-cost hardware (a 4 GB laptop) and protects student privacy, making it practical for schools and colleges.</li>
+</ul>
+
+<h2>IV. Objective</h2>
+<ol>
+  <li>Automatically read scanned and handwritten answer sheets using image preprocessing and OCR.</li>
+  <li>Segment each sheet into individual answers using the question numbers written by the student.</li>
+  <li>Grade each answer against a rubric of weighted key points using NLP models, with explanations.</li>
+  <li>Estimate a confidence score for every mark and route uncertain answers to the teacher.</li>
+  <li>Provide a secure web interface for review, correction, approval, analytics and CSV export.</li>
+  <li>Keep the system lightweight, private and deployable on modest hardware and the cloud.</li>
+</ol>
+
+<h2>V. Scope of the Project</h2>
+<table>
+  <tr><th style="width:30%">In scope</th><td>Descriptive (written) answers in English; typed, scanned or photographed PDF answer sheets;
+    rubric-based grading; teacher review and approval; results analytics and export; single-institution deployment.</td></tr>
+  <tr><th>Users</th><td>Teachers and examiners at schools, colleges and coaching institutes.</td></tr>
+  <tr><th>Out of scope (current version)</th><td>Diagrams, mathematical derivations and drawings; regional-language answers;
+    fully automatic marking without teacher approval.</td></tr>
+  <tr><th>Future scope</th><td>Multilingual OCR and grading, diagram evaluation, LMS integration, student feedback portal,
+    larger-scale cloud deployment with persistent storage.</td></tr>
+</table>
+
+<div class="pb"></div>
+<h2>VI. Proposed Methodology</h2>
+<p class="flow">Rubric → Upload PDFs → Preprocessing → OCR → Segmentation → Grading → Confidence Routing → Teacher Review → Approval &amp; Export</p>
+<ol>
+  <li><b>Rubric creation</b> – the teacher enters questions, maximum marks, a model answer and weighted key points,
+    or drafts them automatically from an uploaded question paper.</li>
+  <li><b>Upload</b> – answer-sheet PDFs (up to 50 per batch) are validated for type, size and page count.</li>
+  <li><b>Preprocessing</b> – pages are rendered with PyMuPDF and cleaned with OpenCV: deskew, denoise, contrast enhancement (CLAHE) and thresholding.</li>
+  <li><b>OCR</b> – a cascade picks the best reader per page: PDF text layer, a vision-LLM reader, or the TrOCR handwriting
+    model; unreadable pages are flagged for teacher transcription.</li>
+  <li><b>Segmentation</b> – the text is split into answers using question markers (e.g. "Q1", "Ans 2"), handling
+    out-of-order and continued answers.</li>
+  <li><b>Grading</b> – each key point is checked with a DeBERTa-v3 Natural Language Inference model (ONNX, CPU) and a
+    lexical scorer; an optional LLM marker (Groq / Gemini) adds a second opinion. Disagreements are flagged.</li>
+  <li><b>Confidence routing</b> – OCR, grading and segmentation confidences are combined and calibrated; confident answers
+    are auto-accepted, uncertain ones go to the review queue.</li>
+  <li><b>Teacher review</b> – the teacher edits text, overrides marks with a reason, adjusts answer regions and approves sheets.</li>
+  <li><b>Results</b> – approved marks are shown in analytics (distribution, question difficulty) and exported as CSV.</li>
+  <li><b>Evaluation</b> – accuracy is measured with Quadratic Weighted Kappa, Cohen's κ, calibration error (ECE) and OCR error rates (CER/WER).</li>
+</ol>
+
+<h2>VII. Tools &amp; Platforms Used</h2>
+<table>
+  <tr><th style="width:28%">Category</th><th>Tools</th></tr>
+  <tr><td>Programming languages</td><td>Python 3.12, TypeScript, HTML/CSS, SQL</td></tr>
+  <tr><td>Frontend</td><td>React 18, Vite, React Router</td></tr>
+  <tr><td>Backend</td><td>FastAPI, Uvicorn, Pydantic, SQLAlchemy</td></tr>
+  <tr><td>Database</td><td>SQLite (local), PostgreSQL (server)</td></tr>
+  <tr><td>Computer vision &amp; OCR</td><td>OpenCV, PyMuPDF, NumPy, TrOCR, Gemini / Groq vision models</td></tr>
+  <tr><td>NLP &amp; AI</td><td>ONNX Runtime, DeBERTa-v3 NLI, Sentence-Transformers, Hugging Face Tokenizers, Groq &amp; Gemini LLM APIs</td></tr>
+  <tr><td>Security</td><td>Argon2 password hashing, JWT authentication, rate limiting</td></tr>
+  <tr><td>Testing &amp; DevOps</td><td>pytest, GitHub Actions CI, Docker, Docker Compose</td></tr>
+  <tr><td>Platforms</td><td>Windows 11, VS Code, Git &amp; GitHub, Render (cloud hosting), Vercel (optional frontend)</td></tr>
+</table>
+
+<h2>VIII. Conclusion</h2>
+<p>SARAS AI shows that AI can make answer-sheet evaluation faster, more consistent and more transparent without
+removing the teacher from the process. By combining image preprocessing, multi-engine OCR, key-point-based NLI grading
+and calibrated confidence routing, the system gives explainable marks and sends only uncertain cases for review. It
+runs on modest hardware, protects student data, and is already deployed as a working web application. With future
+work on multilingual support, diagram evaluation and larger real-world testing, it can become a practical tool for
+educational institutions.</p>
+
+<h2>IX. Bibliography and References</h2>
+<ol class="refs">
+  <li>P. He, J. Gao, W. Chen, "DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training with Gradient-Disentangled Embedding Sharing," arXiv:2111.09543, 2021.</li>
+  <li>M. Li et al., "TrOCR: Transformer-based Optical Character Recognition with Pre-trained Models," arXiv:2109.10282, 2021.</li>
+  <li>N. Reimers, I. Gurevych, "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks," EMNLP 2019.</li>
+  <li>A. Williams, N. Nangia, S. Bowman, "A Broad-Coverage Challenge Corpus for Sentence Understanding through Inference," NAACL 2018.</li>
+  <li>C. Guo, G. Pleiss, Y. Sun, K. Weinberger, "On Calibration of Modern Neural Networks," ICML 2017.</li>
+  <li>J. Cohen, "Weighted Kappa: Nominal Scale Agreement with Provision for Scaled Disagreement or Partial Credit," Psychological Bulletin, 1968.</li>
+  <li>G. Bradski, "The OpenCV Library," Dr. Dobb's Journal of Software Tools, 2000.</li>
+  <li>FastAPI documentation – https://fastapi.tiangolo.com</li>
+  <li>React documentation – https://react.dev</li>
+  <li>ONNX Runtime – https://onnxruntime.ai; PyMuPDF – https://pymupdf.readthedocs.io</li>
+</ol>
+
+</body>
+</html>

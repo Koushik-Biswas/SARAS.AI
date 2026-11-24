@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SARAS AI – Project Progress Report</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm; }
+  body { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; color: #1b1f24; line-height: 1.45; }
+  h1 { font-size: 19pt; margin: 0 0 2px; color: #1d3b8b; }
+  .sub { color: #555; margin: 0 0 12px; }
+  h2 { font-size: 12.5pt; color: #fff; background: #1d3b8b; padding: 4px 8px; margin: 14px 0 6px; border-radius: 3px; }
+  table { border-collapse: collapse; width: 100%; margin: 4px 0; }
+  td, th { border: 1px solid #c9d1e0; padding: 4px 7px; vertical-align: top; text-align: left; }
+  th { background: #eef2fa; width: 32%; }
+  ul, ol { margin: 4px 0 4px 18px; padding: 0; }
+  li { margin: 2px 0; }
+  .fill { color: #b00; font-style: italic; }
+  .shots { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .shots figure { margin: 0; border: 1px solid #c9d1e0; padding: 4px; break-inside: avoid; }
+  .shots img { width: 100%; display: block; }
+  figcaption { font-size: 8.5pt; color: #444; text-align: center; margin-top: 3px; }
+  .pb { break-before: page; }
+  .refs li { font-size: 9.5pt; }
+</style>
+</head>
+<body>
+
+<h1>SARAS AI</h1>
+<p class="sub">Smart Assessment and Recognition Automation System — Project Progress Report<br>
+Live demo: https://saras-ai-488c.onrender.com &nbsp;|&nbsp; Source: https://github.com/Koushik-Biswas/SARAS.AI</p>
+
+<h2>1. Project Title</h2>
+<p><b>SARAS AI: AI-Powered Exam Answer-Sheet Evaluation and Marks Assessment System</b></p>
+
+<h2>2. Project Area / Domain</h2>
+<p>Artificial Intelligence &amp; Machine Learning — Educational Technology (EdTech). Sub-areas: Computer Vision
+(document preprocessing), Optical Character Recognition, Natural Language Processing (Natural Language
+Inference, semantic similarity), Large Language Models, and Full-Stack Web Development.</p>
+
+<h2>3. Online Course Completion Details</h2>
+<table>
+  <tr><th>Course name</th><td class="fill">[Enter course name, e.g. Machine Learning / Deep Learning]</td></tr>
+  <tr><th>Platform</th><td class="fill">[e.g. NPTEL / Coursera / Infosys Springboard]</td></tr>
+  <tr><th>Duration / completion date</th><td class="fill">[e.g. 12 weeks, completed DD-MM-YYYY]</td></tr>
+  <tr><th>Certificate ID / score</th><td class="fill">[Certificate number and score]</td></tr>
+  <tr><th>Relevance to project</th><td>Concepts from the course (supervised learning, NLP, model evaluation) were applied to the
+    grading engine, confidence calibration and evaluation metrics of SARAS AI.</td></tr>
+</table>
+
+<h2>4. Abstract</h2>
+<p>Evaluating descriptive exam answers by hand is slow, inconsistent and gives students little feedback.
+SARAS AI automates the reading and first-pass marking of scanned answer sheets while keeping the teacher in
+control. A teacher defines a rubric (questions, marks and weighted key points), uploads answer-sheet PDFs, and a
+background pipeline renders and cleans each page with OpenCV, reads it with a multi-engine OCR cascade (PDF text
+layer, vision LLM, TrOCR), and splits the text into one answer per question. Each answer is graded by an ensemble
+of a local DeBERTa-v3 NLI cross-encoder (ONNX, CPU-only), a lexical scorer and an optional LLM marker. Every key
+point is reported as matched, partial, missed or contradicted with the student's sentence as evidence. A calibrated
+confidence score auto-accepts confident answers and routes uncertain ones to a teacher review queue. Teachers can
+correct, override and approve marks, and export results as CSV. The system runs on a 4 GB laptop and is deployed
+as a Docker web service.</p>
+
+<h2>5. Project Outline</h2>
+<ol>
+  <li><b>Rubric setup</b> – exam and questions created manually or drafted automatically from a question paper.</li>
+  <li><b>Upload</b> – batch upload of up to 50 answer-sheet PDFs with size, page and file-type validation.</li>
+  <li><b>Preprocessing</b> – PDF rendering, deskew, denoise and contrast enhancement (OpenCV).</li>
+  <li><b>OCR</b> – automatic choice of PDF text layer, vision-LLM reader or TrOCR handwriting model per page.</li>
+  <li><b>Segmentation</b> – answers split by question numbers written on the sheet.</li>
+  <li><b>Grading</b> – key-point matching with NLI ensemble + optional LLM; explainable marks with evidence.</li>
+  <li><b>Confidence routing</b> – OCR × grading × segmentation confidence decides auto-accept or review.</li>
+  <li><b>Teacher review &amp; approval</b> – edit text, override marks, region editor, approve and lock sheets.</li>
+  <li><b>Results &amp; analytics</b> – mark distribution, question difficulty, CSV export.</li>
+</ol>
+<p><b>Tech stack:</b> React 18 + TypeScript (frontend); Python 3.12, FastAPI, SQLAlchemy, SQLite/PostgreSQL (backend);
+OpenCV, PyMuPDF, ONNX Runtime, Transformers (AI/ML); Docker, GitHub Actions, Render (deployment).</p>
+
+<h2>6. Progress till Date – Work / Tasks Completed</h2>
+<table>
+  <tr><th>Requirement analysis &amp; design</th><td>Completed – problem study, system architecture, database schema and REST API design.</td></tr>
+  <tr><th>Backend API</th><td>Completed – FastAPI service with authentication (Argon2, JWT with refresh tokens), exams, rubrics, uploads, results and analytics endpoints.</td></tr>
+  <tr><th>Processing pipeline</th><td>Completed – PDF rendering, OpenCV preprocessing, multi-engine OCR, answer segmentation, background job worker.</td></tr>
+  <tr><th>AI grading engine</th><td>Completed – NLI cross-encoder (ONNX), lexical scorer, LLM marker (Groq / Gemini) with anonymisation and consent controls, confidence calibration.</td></tr>
+  <tr><th>Frontend</th><td>Completed – React SPA: dashboard, rubric editor, upload, live status, review workspace, region editor, results, approval, analytics, light/dark themes.</td></tr>
+  <tr><th>Testing &amp; evaluation</th><td>Completed – pytest suite, end-to-end smoke test, CI on GitHub Actions; evaluation with QWK, κ, ECE and CER/WER on benchmark data.</td></tr>
+  <tr><th>Security hardening</th><td>Completed – rate limiting, login lock-out, upload guards, security headers, per-teacher data isolation, audit log.</td></tr>
+  <tr><th>Deployment &amp; documentation</th><td>Completed – Docker image, Render deployment (live), README with diagrams and screenshots, MIT licence.</td></tr>
+  <tr><th>Remaining work</th><td>Persistent cloud storage for production use, larger handwritten-answer evaluation, user testing with teachers.</td></tr>
+</table>
+
+<h2 class="pb">7. Implementation Snapshots</h2>
+<div class="shots">
+  <figure><img src="../images/screenshots/01-login.png"><figcaption>Fig 1. Sign-in screen</figcaption></figure>
+  <figure><img src="../images/screenshots/02-dashboard.png"><figcaption>Fig 2. Teacher dashboard</figcaption></figure>
+  <figure><img src="../images/screenshots/03-rubric.png"><figcaption>Fig 3. Rubric creation</figcaption></figure>
+  <figure><img src="../images/screenshots/04-upload.png"><figcaption>Fig 4. Answer-sheet upload</figcaption></figure>
+  <figure><img src="../images/screenshots/06-review.png"><figcaption>Fig 5. Review workspace with marks, confidence and evidence</figcaption></figure>
+  <figure><img src="../images/screenshots/08-results.png"><figcaption>Fig 6. Results per student</figcaption></figure>
+  <figure><img src="../images/screenshots/10-analytics.png"><figcaption>Fig 7. Analytics</figcaption></figure>
+  <figure><img src="../images/preprocessing-pipeline.png"><figcaption>Fig 8. OpenCV preprocessing pipeline</figcaption></figure>
+</div>
+
+<h2>8. References</h2>
+<ol class="refs">
+  <li>P. He, J. Gao, W. Chen, "DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training with Gradient-Disentangled Embedding Sharing," arXiv:2111.09543, 2021.</li>
+  <li>M. Li et al., "TrOCR: Transformer-based Optical Character Recognition with Pre-trained Models," arXiv:2109.10282, 2021.</li>
+  <li>N. Reimers, I. Gurevych, "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks," EMNLP 2019.</li>
+  <li>A. Williams, N. Nangia, S. Bowman, "A Broad-Coverage Challenge Corpus for Sentence Understanding through Inference (MultiNLI)," NAACL 2018.</li>
+  <li>C. Guo, G. Pleiss, Y. Sun, K. Weinberger, "On Calibration of Modern Neural Networks," ICML 2017.</li>
+  <li>J. Cohen, "Weighted Kappa: Nominal Scale Agreement with Provision for Scaled Disagreement or Partial Credit," Psychological Bulletin, 1968.</li>
+  <li>G. Bradski, "The OpenCV Library," Dr. Dobb's Journal of Software Tools, 2000.</li>
+  <li>FastAPI documentation – https://fastapi.tiangolo.com; React documentation – https://react.dev</li>
+  <li>ONNX Runtime – https://onnxruntime.ai; PyMuPDF – https://pymupdf.readthedocs.io</li>
+</ol>
+
+</body>
+</html>
